@@ -40,7 +40,6 @@ export default function Header({handlePrint, setAddInvoice, setShowInvoice})  {
                     </button>
                 </div>
 
-
                 <div className="invoice-btn-r">
                     <button 
                         className="saveInvoice-btn"

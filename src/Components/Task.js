@@ -2,14 +2,14 @@ import React from 'react';
 import InvoiceTaskOptions from "./InvoiceTaskOptions";
 
 export default function Task(
-        props,
-        date,setDate,
-        task,setTask,
-        quantity,setQuantity,
-        price,setPrice,
-        total,setTotal,
-        unit,setUnit
-    ) {
+    props,
+    date,setDate,
+    task,setTask,
+    quantity,setQuantity,
+    price,setPrice,
+    total,setTotal,
+    unit,setUnit
+) {
 
 
     return (

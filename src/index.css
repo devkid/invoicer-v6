@@ -38,6 +38,9 @@ mr-20{
 .mt-20{
     margin-top: 20px;
 }
+.mb-20{
+margin-bottom: 20px;
+}
 
 /*         Header         */
 /*########################*/
@@ -425,4 +428,10 @@ footer{
     background-color:#1F2937;
     color: white;
     margin-top: 0;
+}
+
+.addInvoice{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

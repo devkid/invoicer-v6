@@ -27,6 +27,8 @@ export default function App() {
     const [companiesBankName, setCompaniesBankName] = useState("")
     const [companiesBankIban, setCompaniesBankIban] = useState("")
     const [companiesBankBic, setCompaniesBankBic] = useState("")
+    const [companiesTaxId, setCompaniesTaxId] = useState("")
+    const [companiesParagraph, setCompaniesParagraph] = useState("")
     
 //Invoices
     const [date, setDate] = useState("")
@@ -86,12 +88,13 @@ export default function App() {
                     companiesWebsite = {companiesWebsite} 
                     setCompaniesWebsite = {setCompaniesWebsite}                    
                     
+                    date = {date}
+                    setDate={setDate}
+
                     clientFirstName = {clientFirstName}
                     setClientFirstName={setClientFirstName}
                     clientLastName = {clientLastName}
                     setClientLastName={setClientLastName}
-                    clientId = {clientId} 
-                    setClientId = {setClientId}
                     clientStreet = {clientStreet} 
                     setClientStreet = {setClientStreet}
                     clientZip = {clientZip} 
@@ -113,6 +116,8 @@ export default function App() {
                     <InvoiceDetails
                         date = {date}
                         setDate = {setDate}
+                        clientId = {clientId} 
+                        setClientId = {setClientId}
                         invoiceNumber = {invoiceNumber}
                         setInvoiceNumber = {setInvoiceNumber}
                         invoiceDate = {invoiceDate}
@@ -133,9 +138,17 @@ export default function App() {
                     <InvoiceNotes
                         // notes = {notes}
                         companiesBankAccount = {companiesBankAccount}
+                        setCompaniesBankAccount = {setCompaniesBankAccount}
                         companiesBankName = {companiesBankName}
+                        setCompaniesBankName = {setCompaniesBankName}
                         companiesBankIban = {companiesBankIban}
+                        setCompaniesBankIban = {setCompaniesBankIban}
                         companiesBankBic = {companiesBankBic}
+                        setCompaniesBankBic = {setCompaniesBankBic}
+                        companiesTaxId = {companiesTaxId}
+                        setCompaniesTaxId = {setCompaniesTaxId}
+                        companiesParagraph = {companiesParagraph}
+                        setCompaniesParagraph = {setCompaniesParagraph}
                     />
 
                     <Footer/>
@@ -169,6 +182,10 @@ export default function App() {
                             setCompaniesBankIban = {setCompaniesBankIban}
                             companiesBankBic = {companiesBankBic} 
                             setCompaniesBankBic = {setCompaniesBankBic}
+                            companiesTaxId = {companiesTaxId} 
+                            setCompaniesTaxId = {setCompaniesTaxId}
+                            companiesParagraph = {companiesParagraph} 
+                            setCompaniesParagraph = {setCompaniesParagraph}
                             
                             clientFirstName = {clientFirstName}
                             setClientFirstName={setClientFirstName}
@@ -208,27 +225,3 @@ export default function App() {
     );
 }
 
-// const [previewInvoice, setPreviewInvoice] = useState(true)
-// const [editInvoice, setEditInvoice] = useState("")
-// const [invoiceMenu, setInvoiceMenu] = useState("")
-// const [printInvoice, setPrintInvoice] = useState("")
-// const [sendInvoice, setSendInvoice] = useState("")
-// const [saveInvoice, setSaveInvoice] = useState("")
-// const [companyName, setCompanyName] = useState("")
-// const [companyAddress, setCompanyAddress] = useState("")
-// const [companyEmail, setCompanyEmail] = useState("")
-// const [companyPhone, setCompanyPhone] = useState("")
-// const [companyBankName, setCompanyBankName] = useState("")
-// const [companyWebsite, setCompanyWebsite] = useState("")
-// const [clientAddress, setClientAddress] = useState("")
-// const [invoiceNumber, setINvoiceNumber] = useState("")
-// const [invoiceDate, setInvoiceDate] = useState("")
-// const [dueDate , setDueDate] = useState("")
-// const [notes, setNotes] = useState("")
-// const [total, setTotal] = useState("")
-// const [price, setPrice] = useState("")
-// const [quantity, setQuantity] = useState("")
-// const [unit, setUnit] = useState("")
-// const [date, setDate] = useState("")
-// const [task, setTask] = useState("")
-// const [currentTaskId, setCurrentTaskId] = useState("")

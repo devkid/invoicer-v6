@@ -11,6 +11,13 @@ export default function AddInvoice({
     companiesPhone, setCompaniesPhone,
     companiesEmail, setCompaniesEmail,
     companiesWebsite, setCompaniesWebsite,
+    companiesBankAccount, setCompaniesBankAccount,
+    companiesBankName, setCompaniesBankName,
+    companiesBankIban, setCompaniesBankIban,
+    companiesBankBic, setCompaniesBankBic,
+    companiesTaxId, setCompaniesTaxId,
+    companiesParagraph, setCompaniesParagraph,
+
 
     date, setDate,
     invoiceDate, setInvoiceDate,
@@ -38,7 +45,7 @@ export default function AddInvoice({
     },[setAddInvoice])
 
     return (
-        <div>
+        <div className="addInvoice">
             <h3 className="w">Enter your Companies Data here...</h3>
 
                     <div className="task-con-inputFlex">
@@ -152,6 +159,90 @@ export default function AddInvoice({
                             onChange={(e) => setCompaniesWebsite(e.target.value)}
                         />
                     </div>
+
+                    <div className="task-con-inputFlex">
+                        <label className="w mr-20" htmlFor={companiesBankAccount}>Companies Bank Account</label>
+                        <input
+                            className="task-input"
+                            type="text"
+                            placeholder="Enter companies Bank Account"
+                            name="companiesBankAccount"
+                            id="companiesBankAccount"
+                            autoComplete="off"
+                            value={companiesBankAccount}
+                            onChange={(e) => setCompaniesBankAccount(e.target.value)}
+                        />
+                    </div>
+
+                    <div className="task-con-inputFlex">
+                        <label className="w mr-20" htmlFor={companiesBankName}>Companies Bank Name</label>
+                        <input
+                            className="task-input"
+                            type="text"
+                            placeholder="Enter companies Bank Name"
+                            name="companiesBankName"
+                            id="companiesBankName"
+                            autoComplete="off"
+                            value={companiesBankName}
+                            onChange={(e) => setCompaniesBankName(e.target.value)}
+                        />
+                    </div>
+
+                    <div className="task-con-inputFlex">
+                        <label className="w mr-20" htmlFor={companiesBankIban}>Companies Bank Iban</label>
+                        <input
+                            className="task-input"
+                            type="text"
+                            placeholder="Enter companies Iban"
+                            name="companiesBankIban"
+                            id="companiesBankIban"
+                            autoComplete="off"
+                            value={companiesBankIban}
+                            onChange={(e) => setCompaniesBankIban(e.target.value)}
+                        />
+                    </div>
+
+                    <div className="task-con-inputFlex">
+                        <label className="w mr-20" htmlFor={companiesBankBic}>Companies Bank Bic</label>
+                        <input
+                            className="task-input"
+                            type="text"
+                            placeholder="Enter companies Bank Bic"
+                            name="companiesBankBic"
+                            id="companiesBankBic"
+                            autoComplete="off"
+                            value={companiesBankBic}
+                            onChange={(e) => setCompaniesBankBic(e.target.value)}
+                        />
+                    </div>
+
+                    <div className="task-con-inputFlex">
+                    <label className="w mr-20" htmlFor={companiesTaxId}>Companies Tax Id</label>
+                    <input
+                        className="task-input"
+                        type="text"
+                        placeholder="Enter companies Tax Id"
+                        name="companiesTaxId"
+                        id="companiesTaxId"
+                        autoComplete="off"
+                        value={companiesTaxId}
+                        onChange={(e) => setCompaniesTaxId(e.target.value)}
+                    />
+                </div>
+
+                <div className="task-con-inputFlex">
+                <label className="w mr-20" htmlFor={companiesParagraph}>Companies Paragraph</label>
+                <input
+                    className="task-input"
+                    type="text"
+                    placeholder="Enter companies Paragraph"
+                    name="companiesParagraph"
+                    id="companiesParagraph"
+                    autoComplete="off"
+                    value={companiesParagraph}
+                    onChange={(e) => setCompaniesParagraph(e.target.value)}
+                />
+            </div>
 
             <h3 className="w">Enter your Invoice Data here...</h3>
 
@@ -355,7 +446,7 @@ export default function AddInvoice({
                         />
                     </div>
 
-                    <div className="task-con-inputFlex">
+                    <div className="task-con-inputFlex mb-20">
                         <label className="w mr-20" htmlFor={clientWebsite}>Client's Website</label>
                         <input
                             className="task-input"
@@ -374,7 +465,7 @@ export default function AddInvoice({
                 onClick={() => setAddInvoice(false)}
                 id="show-invoice-mask"
             >
-                Preview Invoice EditMask !!!
+                Create Invoice
             </button>
         </div>
     )

@@ -15,10 +15,6 @@ export default function AddTask({setTask, setCurrentTaskId}) {
         console.log(setTask)
     }
 
-
-    
-    
-
     return (
     <div className="div-con-2 ml-20">
         <button 
