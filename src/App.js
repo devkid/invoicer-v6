@@ -6,6 +6,7 @@ import InvoiceDetails from "./Components/InvoiceDetails"
 import InvoiceTasks from "./Components/InvoiceTasks"
 import InvoiceNotes from "./Components/InvoiceNotes"
 import Footer from "./Components/Footer"
+import Example from "./Components/Example"
 
 
 export default function App() {
@@ -152,6 +153,9 @@ export default function App() {
                     />
 
                     <Footer/>
+                    <Example/>
+
+
 
 
                 </div> : (
