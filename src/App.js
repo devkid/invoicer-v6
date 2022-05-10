@@ -6,7 +6,7 @@ import InvoiceDetails from "./Components/InvoiceDetails"
 import InvoiceTasks from "./Components/InvoiceTasks"
 import InvoiceNotes from "./Components/InvoiceNotes"
 import Footer from "./Components/Footer"
-import Example from "./Components/Example"
+import Task from "./Components/Task"
 
 
 export default function App() {
@@ -16,7 +16,14 @@ export default function App() {
     const [addInvoice, setAddInvoice] = useState(false)
 
 //Companies
-    const [companiesName, setCompaniesName] = useState("")
+    const [companiesName, setCompaniesName] = useState([])
+    function addNewCompaniesName(){
+        const newCompaniesNameElement = "companiesName"
+        setCompaniesName(prevState => [...prevState, newCompaniesNameElement])
+    }
+
+    const companiesNameElements = companiesName.map(companiesName => <p key={companiesName}>{companiesName}</p>)
+
     const [companiesStreet, setCompaniesStreet] = useState("")
     const [companiesZip, setCompaniesZip] = useState("")
     const [companiesCity, setCompaniesCity] = useState("")
@@ -31,11 +38,15 @@ export default function App() {
     const [companiesTaxId, setCompaniesTaxId] = useState("")
     const [companiesParagraph, setCompaniesParagraph] = useState("")
     
-//Invoices
+//InvoiceDetails
     const [date, setDate] = useState("")
     const [invoiceDate, setInvoiceDate] = useState("")
     const [invoiceNumber, setInvoiceNumber] = useState("")
     const [dueDate, setDueDate] = useState("")
+//Task
+    const [task, setTask] = useState([])
+//InvoiceTasks
+    const [tasks, setTasks] = useState([])
 
 //Clients
     const [clientFirstName, setClientFirstName] = useState("")
@@ -57,6 +68,18 @@ export default function App() {
     const handleDownload = () => {
         console.log("handleDownload")
     }
+
+    //StateArray Invoices
+    const [invoices, setInvoices] = useState(["The Interesting Compnay", "Nr1"])
+        //function to add a new invoice
+    function addNewInvoice(){
+        //Was soll dem Array hinzugefügt werden | String "Thing ${valueOfArrayLength+1} "
+    const newInvoiceElement = `Thing ${invoices.length +1}`
+        // fügt den neuen String zu dem Invoices Array hinzu
+        setInvoices(prevState => [...prevState, newInvoiceElement])
+    }
+        //
+    const invoiceElements = invoices.map(invoices => <p key={invoices}>{invoices}</p>)
 
 
     return (
@@ -128,16 +151,9 @@ export default function App() {
                     />
 
                     <InvoiceTasks
-                        // setDate = {setDate}
-                        // setTask = {setTask}
-                        // setUnit = {setUnit}
-                        // setQuantity = {setQuantity}
-                        // setPrice = {setPrice}
-                        // setTotal = {setTotal}
                     />
 
                     <InvoiceNotes
-                        // notes = {notes}
                         companiesBankAccount = {companiesBankAccount}
                         setCompaniesBankAccount = {setCompaniesBankAccount}
                         companiesBankName = {companiesBankName}
@@ -153,9 +169,6 @@ export default function App() {
                     />
 
                     <Footer/>
-                    <Example/>
-
-
 
 
                 </div> : (
@@ -223,9 +236,15 @@ export default function App() {
                             dueDate = {dueDate}
                             setDueDate = {setDueDate}
                         />
+                        <div>
+                            <button onClick={addNewCompaniesName}>Add Invoice</button>
+                            {companiesNameElements}
+                        </div>
                     </div>
                 )}
         </div>
+
+
     );
 }
 

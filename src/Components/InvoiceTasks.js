@@ -1,14 +1,15 @@
 import Task from "./Task"; //<Task />
 import AddTask from "./AddTask"; //<Task />
 
-export default function InvoiceTasks(addTask){
+export default function InvoiceTasks(tasks, setTasks){
 
 
     return (
         
         <main className="main">
         <AddTask
-        addTask = {addTask}
+            tasks = {tasks}
+            setTasks = {setTasks}
         />
 
             <div className="task-con-inputs">

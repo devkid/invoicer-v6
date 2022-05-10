@@ -43,6 +43,7 @@ export default function AddInvoice({
     useEffect(() => {
         console.log("setAddInvoice", setAddInvoice)
     },[setAddInvoice])
+    ()
 
     return (
         <div className="addInvoice">
