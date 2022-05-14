@@ -1,12 +1,12 @@
-import React, {useState} from 'react';
 
-export default function InvoiceOptions({
-    companiesBankAccount = {companiesBankAccount},
-    companiesBankName = {companiesBankName},
-    companiesBankIban = {companiesBankIban},
-    companiesBankBic = {companiesBankBic},
-    companiesTaxId = {companiesTaxId},
-    companiesParagraph = {companiesParagraph}
+export default function InvoiceNotes({
+    invoiceFormData,
+    companiesBankAccount = invoiceFormData.companiesBankAccount,
+    companiesBankName = invoiceFormData.companiesBankName,
+    companiesBankIban = invoiceFormData.companiesBankIban,
+    companiesBankBic = invoiceFormData.companiesBankBic,
+    companiesTaxId = invoiceFormData.companiesTaxId,
+    companiesParagraph = invoiceFormData.companiesParagraph
 }){
 
 

@@ -7,7 +7,7 @@ import downloadBtnIcon from"../images/download_white.png";
 import previewBtnIcon from"../images/monitor_white.png";
 import sendMailBtnIcon from"../images/sendMail_white.png";
 
-export default function Header({handlePrint, setAddInvoice, setShowInvoice})  {
+export default function Header({handlePrint, setCreateInvoice, setShowInvoice})  {
    
     function editTask(){
         //Get task by Id and Patch it 
@@ -25,7 +25,7 @@ export default function Header({handlePrint, setAddInvoice, setShowInvoice})  {
                     
                     <button 
                     className="addInvoice-btn"
-                    onClick={() => setAddInvoice(true)}
+                    onClick={() => setCreateInvoice(true)}
                     >
                     <img src={addBtnIcon} alt="addBtnIcon"/>
                     </button>

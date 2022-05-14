@@ -1,67 +1,171 @@
-import React, {useState} from 'react';
+import React, {useState, useMemo, useEffect} from 'react';
+
 import Header from "./Components/Header"
-import AddInvoice from "./Components/AddInvoice"
 import InvoiceHeader from "./Components/InvoiceHeader"
 import InvoiceDetails from "./Components/InvoiceDetails"
 import InvoiceTasks from "./Components/InvoiceTasks"
 import InvoiceNotes from "./Components/InvoiceNotes"
 import Footer from "./Components/Footer"
-import Task from "./Components/Task"
+import CompaniesFormData from "./Components/CompaniesFormData"
+import ClientFormData from "./Components/ClientFormData"
+import InvoiceFormData from "./Components/InvoiceFormData"
 
 
 export default function App() {
+//var, let, const
+    const memoDate = useMemo(() => new Date(),[]).toLocaleDateString()
+
 //App
     const [showInvoice, setShowInvoice] = useState(false)
-//  const [showInvoiceMask, setShowInvoiceMask] = useState(true)
-    const [addInvoice, setAddInvoice] = useState(false)
-
+//    const [addNewInvoice, setAddNewInvoice] = useState(false)
+    const [createInvoice, setCreateInvoice] = useState(false)
 //Companies
-    const [companiesName, setCompaniesName] = useState([])
-    function addNewCompaniesName(){
-        const newCompaniesNameElement = "companiesName"
-        setCompaniesName(prevState => [...prevState, newCompaniesNameElement])
-    }
 
-    const companiesNameElements = companiesName.map(companiesName => <p key={companiesName}>{companiesName}</p>)
+    const [companiesFormData, setCompaniesFormData] = useState({
+        companiesName:"",
+        firstName:"",
+        lastName:"",
+        companiesStreet:"",
+        companiesStreetNumber:"",
+        companiesZip:"",
+        companiesCity:"",
+        companiesCountry:"",
+        companiesPhone:"",
+        companiesEmail:"",
+        companiesWebsite:"",
+    })
 
-    const [companiesStreet, setCompaniesStreet] = useState("")
-    const [companiesZip, setCompaniesZip] = useState("")
-    const [companiesCity, setCompaniesCity] = useState("")
-    const [companiesCountry, setCompaniesCountry] = useState("")
-    const [companiesPhone, setCompaniesPhone] = useState("")
-    const [companiesEmail, setCompaniesEmail] = useState("")
-    const [companiesWebsite, setCompaniesWebsite] = useState("")
-    const [companiesBankAccount, setCompaniesBankAccount] = useState("")
-    const [companiesBankName, setCompaniesBankName] = useState("")
-    const [companiesBankIban, setCompaniesBankIban] = useState("")
-    const [companiesBankBic, setCompaniesBankBic] = useState("")
-    const [companiesTaxId, setCompaniesTaxId] = useState("")
-    const [companiesParagraph, setCompaniesParagraph] = useState("")
-    
-//InvoiceDetails
-    const [date, setDate] = useState("")
-    const [invoiceDate, setInvoiceDate] = useState("")
-    const [invoiceNumber, setInvoiceNumber] = useState("")
-    const [dueDate, setDueDate] = useState("")
-//Task
-    const [task, setTask] = useState([])
-//InvoiceTasks
-    const [tasks, setTasks] = useState([])
+    useEffect(() => {
+        console.log("CompaniesFormData",companiesFormData)
+    },[companiesFormData])
 
 //Clients
-    const [clientFirstName, setClientFirstName] = useState("")
-    const [clientLastName, setClientLastName] = useState("")
-    const [clientId, setClientId] = useState("")
-    const [clientStreet, setClientStreet] = useState("")
-    const [clientZip, setClientZip] = useState("")
-    const [clientCity, setClientCity] = useState("")
-    const [clientCountry, setClientCountry] = useState("")
-    const [clientPhone, setClientPhone] = useState("")
-    const [clientMobile, setClientMobile] = useState("")
-    const [clientEmail, setClientEmail] = useState("")
-    const [clientWebsite, setClientWebsite] = useState("")
+//TODO Check if clientFormData is defined
+    const [clientFormData, setClientFormData] = useState({
+        clientFirstName: "",
+        clientLastName: "",
+        clientStreet: "",
+        clientStreetNumber: "",
+        clientZip: "",
+        clientCity: "",
+        clientCountry: "",
+        clientPhone: "",
+        clientMobile: "",
+        clientEmail: "",
+        clientWebsite:""
+    })
 
+//InvoiceDetails
+    const [invoiceFormData, setInvoiceFormData] = useState({
+        date: "",
+        invoiceDate:"",
+        invoiceNumber:"",
+        dueDate:"",
+        companiesBankAccount:"",
+        companiesBankName:"",
+        companiesBankIban:"",
+        companiesBankBic:"",
+        companiesTaxId:"",
+        companiesParagraph:""
+    })
 
+//InvoiceTasks
+    //Initializes an Array of Things with useState |  default
+    const [tasksArray, setTasksArray] = React.useState([
+
+        {
+            taskId:"",
+            taskDate:"",
+            taskName:"",
+            taskUnit:"",
+            taskQuantity:"",
+            taskPrice:"",
+            taskTotal:""
+        },
+
+        ]
+    )
+
+//Task
+    const [task, setTask] = React.useState(
+            {
+                taskId:"",
+                taskDate:"",
+                taskName:"",
+                taskUnit:"",
+                taskQuantity:"",
+                taskPrice:"",
+                taskTotal:""
+            }
+    )
+
+    useEffect(() => {
+        console.log("tasksArray",tasksArray)
+    },[tasksArray])
+
+    useEffect(() => {
+        console.log("InvoiceFormData",invoiceFormData)
+    },[invoiceFormData])
+
+    useEffect(() => {
+        console.log("ClientFormData",clientFormData)
+    },[clientFormData])
+
+    function handleCompaniesChange(event){
+        setCompaniesFormData(prevFormData => {
+            return {
+                ...prevFormData,
+                [event.target.name]: event.target.value
+            }
+        })
+    }
+
+    function handleClientChange(event){
+        setClientFormData(prevFormData => {
+            return {
+                ...prevFormData,
+                [event.target.name]: event.target.value
+            }
+        })
+    }
+
+    function handleInvoiceChange(event){
+        setInvoiceFormData(prevFormData => {
+            return {
+                ...prevFormData,
+                [event.target.name]: event.target.value
+            }
+        })
+    }
+
+    {/* // const handleTaskChange = index => event => {
+        //     console.log('index: ' + index)
+        //     console.log('name: '+ event.target.name)
+        //     let newArray = [...tasksArray] //Copying the old tasksArray
+        //     newArray[index] = event.target.value // replace event.target... with whatever you want to change it to
+        //     setTasksArray(newArray)
+        // */}
+
+     function handleTaskChange(event){
+        setTasksArray(prevTasksArray =>{
+            return {
+                ...prevTasksArray,
+                [event.target.name]: event.target.value
+                }
+            })
+        }
+
+    {/*    // function handleTaskChange(event){
+        //     setTasksArray(prevTaskArray =>{
+        //         return prevTaskArray.map((task)=>{
+        //             return task.taskId === taskId ? {
+        //                 ...prevTaskArray,
+        //                 [event.target.name]: event.target.value
+        //            })
+        //         })
+        //     })
+        // }
+    */}
     const handlePrint = () => {
         window.print()
     }
@@ -69,103 +173,48 @@ export default function App() {
         console.log("handleDownload")
     }
 
-    //StateArray Invoices
-    const [invoices, setInvoices] = useState(["The Interesting Compnay", "Nr1"])
-        //function to add a new invoice
-    function addNewInvoice(){
-        //Was soll dem Array hinzugefügt werden | String "Thing ${valueOfArrayLength+1} "
-    const newInvoiceElement = `Thing ${invoices.length +1}`
-        // fügt den neuen String zu dem Invoices Array hinzu
-        setInvoices(prevState => [...prevState, newInvoiceElement])
-    }
-        //
-    const invoiceElements = invoices.map(invoices => <p key={invoices}>{invoices}</p>)
-
-
     return (
 
         <div className="App">
-            {!addInvoice ?
+            {/* if createInvoice is false or falthy render below code */}
+
+            {!createInvoice ?
                 <div>
+                    {/* Passing down props and func's */}
                     <Header
                         handlePrint={handlePrint}
-                        handleDownload={handleDownload}
-                        setShowInvoice={setShowInvoice}
-                        setAddInvoice={setAddInvoice}
+                        handleDownload = {handleDownload}
+                        setShowInvoice = {setShowInvoice}
+                        setCreateInvoice = {setCreateInvoice}
                     />
 
                     <InvoiceHeader
-                    companiesName = {companiesName}
-                    setCompaniesName = {setCompaniesName}
-                    companiesStreet = {companiesStreet}
-                    setCompaniesStreet = {setCompaniesStreet}
-                    companiesZip = {companiesZip}
-                    setCompaniesZip = {setCompaniesZip}
-                    companiesCity = {companiesCity}
-                    setCompaniesCity = {setCompaniesCity}
-                    companiesCountry = {companiesCountry} 
-                    setCompaniesCountry = {setCompaniesCountry}
-                    companiesPhone = {companiesPhone} 
-                    setCompaniesPhone = {setCompaniesPhone}
-                    companiesEmail = {companiesEmail} 
-                    setCompaniesEmail = {setCompaniesEmail}
-                    companiesWebsite = {companiesWebsite} 
-                    setCompaniesWebsite = {setCompaniesWebsite}                    
-                    
-                    date = {date}
-                    setDate={setDate}
-
-                    clientFirstName = {clientFirstName}
-                    setClientFirstName={setClientFirstName}
-                    clientLastName = {clientLastName}
-                    setClientLastName={setClientLastName}
-                    clientStreet = {clientStreet} 
-                    setClientStreet = {setClientStreet}
-                    clientZip = {clientZip} 
-                    setClientZip = {setClientZip}
-                    clientCity = {clientCity} 
-                    setClientCity = {setClientCity}
-                    clientCountry =  {clientCountry}
-                    setClientCountry = {setClientCountry}
-                    clientPhone = {clientPhone} 
-                    setClientPhone = {setClientPhone}
-                    clientMobile = {clientMobile} 
-                    setClientMobile = {setClientMobile}
-                    clientEmail = {clientEmail}
-                    setClientEmail = {setClientEmail}
-                    clientWebsite = {clientWebsite} 
-                    setClientWebsite = {setClientWebsite}          
+                    companiesFormData = {companiesFormData}
+                    setCompaniesFormData = {setCompaniesFormData}
+                    clientFormData = {clientFormData}
+                    setClientFormData = {setClientFormData}
                     />
 
                     <InvoiceDetails
-                        date = {date}
-                        setDate = {setDate}
-                        clientId = {clientId} 
-                        setClientId = {setClientId}
-                        invoiceNumber = {invoiceNumber}
-                        setInvoiceNumber = {setInvoiceNumber}
-                        invoiceDate = {invoiceDate}
-                        setInvoiceDate = {setInvoiceDate}
-                        dueDate = {dueDate}
-                        setDueDate = {setDueDate}
+                        invoiceFormData = {invoiceFormData}
+                        memoDate ={memoDate}
                     />
 
                     <InvoiceTasks
+                        tasksArray={tasksArray}
+                        setTasksArray={setTasksArray}
+                        task={task}
+                        setTask={setTask}
+                        handleTaskChange={handleTaskChange}
                     />
 
                     <InvoiceNotes
-                        companiesBankAccount = {companiesBankAccount}
-                        setCompaniesBankAccount = {setCompaniesBankAccount}
-                        companiesBankName = {companiesBankName}
-                        setCompaniesBankName = {setCompaniesBankName}
-                        companiesBankIban = {companiesBankIban}
-                        setCompaniesBankIban = {setCompaniesBankIban}
-                        companiesBankBic = {companiesBankBic}
-                        setCompaniesBankBic = {setCompaniesBankBic}
-                        companiesTaxId = {companiesTaxId}
-                        setCompaniesTaxId = {setCompaniesTaxId}
-                        companiesParagraph = {companiesParagraph}
-                        setCompaniesParagraph = {setCompaniesParagraph}
+                        companiesBankAccount = {invoiceFormData.companiesBankAccount}
+                        companiesBankName = {invoiceFormData.companiesBankName}
+                        companiesBankIban = {invoiceFormData.companiesBankIban}
+                        companiesBankBic = {invoiceFormData.companiesBankBic}
+                        companiesTaxId = {invoiceFormData.companiesTaxId}
+                        companiesParagraph = {invoiceFormData.companiesParagraph}
                     />
 
                     <Footer/>
@@ -173,78 +222,41 @@ export default function App() {
 
                 </div> : (
                     <div>
-                        <AddInvoice
-                            setAddInvoice={setAddInvoice}
-                            companiesName = {companiesName}
-                            setCompaniesName = {setCompaniesName}
-                            companiesStreet = {companiesStreet}
-                            setCompaniesStreet = {setCompaniesStreet}
-                            companiesZip = {companiesZip}
-                            setCompaniesZip = {setCompaniesZip}
-                            companiesCity = {companiesCity}
-                            setCompaniesCity = {setCompaniesCity}
-                            companiesCountry = {companiesCountry} 
-                            setCompaniesCountry = {setCompaniesCountry}
-                            companiesPhone = {companiesPhone} 
-                            setCompaniesPhone = {setCompaniesPhone}
-                            companiesEmail = {companiesEmail} 
-                            setCompaniesEmail = {setCompaniesEmail}
-                            companiesWebsite = {companiesWebsite} 
-                            setCompaniesWebsite = {setCompaniesWebsite}
-                            companiesBankAccount = {companiesBankAccount} 
-                            setCompaniesBankAccount = {setCompaniesBankAccount}
-                            companiesBankName = {companiesBankName} 
-                            setCompaniesBankName = {setCompaniesBankName}
-                            companiesBankIban = {companiesBankIban} 
-                            setCompaniesBankIban = {setCompaniesBankIban}
-                            companiesBankBic = {companiesBankBic} 
-                            setCompaniesBankBic = {setCompaniesBankBic}
-                            companiesTaxId = {companiesTaxId} 
-                            setCompaniesTaxId = {setCompaniesTaxId}
-                            companiesParagraph = {companiesParagraph} 
-                            setCompaniesParagraph = {setCompaniesParagraph}
-                            
-                            clientFirstName = {clientFirstName}
-                            setClientFirstName={setClientFirstName}
-                            clientLastName = {clientLastName}
-                            setClientLastName={setClientLastName}
-                            clientId = {clientId} 
-                            setClientId = {setClientId}
-                            clientStreet = {clientStreet} 
-                            setClientStreet = {setClientStreet}
-                            clientZip = {clientZip} 
-                            setClientZip = {setClientZip}
-                            clientCity = {clientCity} 
-                            setClientCity = {setClientCity}
-                            clientCountry =  {clientCountry}
-                            setClientCountry = {setClientCountry}
-                            clientPhone = {clientPhone} 
-                            setClientPhone = {setClientPhone}
-                            clientMobile = {clientMobile} 
-                            setClientMobile = {setClientMobile}
-                            clientEmail = {clientEmail}
-                            setClientEmail = {setClientEmail}
-                            clientWebsite = {clientWebsite} 
-                            setClientWebsite = {setClientWebsite}    
-                            
-                            date = {date}
-                            setDate = {setDate}
-                            invoiceNumber = {invoiceNumber}
-                            setInvoiceNumber = {setInvoiceNumber}
-                            invoiceDate = {invoiceDate}
-                            setInvoiceDate = {setInvoiceDate}
-                            dueDate = {dueDate}
-                            setDueDate = {setDueDate}
+                        <CompaniesFormData
+                            handleCompaniesChange = {handleCompaniesChange}
+                            setCreateInvoice = {setCreateInvoice}
+                            companiesFormData = {companiesFormData}
+                            setCompaniesFormData = {setCompaniesFormData}
+                            clientFormData = {clientFormData}
+                            setClientFormData = {setClientFormData}
+                            invoiceFormData = {invoiceFormData}
+                            setInvoiceFormData={setInvoiceFormData}
                         />
-                        <div>
-                            <button onClick={addNewCompaniesName}>Add Invoice</button>
-                            {companiesNameElements}
-                        </div>
+                        <ClientFormData
+                            handleClientChange = {handleClientChange}
+                            setCreateInvoice = {setCreateInvoice}
+                            companiesFormData = {companiesFormData}
+                            clientFormData = {clientFormData}
+                            setClientFormData = {setClientFormData}
+                            invoiceFormData = {invoiceFormData}
+                            setInvoiceFormData={setInvoiceFormData}
+                        />
+                        <InvoiceFormData
+                            handleInvoiceChange = {handleInvoiceChange}
+                            memoDate = {memoDate}
+                            setCreateInvoice = {setCreateInvoice}
+                            companiesFormData = {companiesFormData}
+                            setCompaniesFormData = {setCompaniesFormData}
+                            clientFormData = {clientFormData}
+                            setClientFormData = {setClientFormData}
+                            invoiceFormData = {invoiceFormData}
+                            setInvoiceFormData={setInvoiceFormData}
+                        />
+
                     </div>
                 )}
         </div>
 
 
-    );
+    )
 }
-

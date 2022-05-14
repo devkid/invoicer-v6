@@ -1,15 +1,29 @@
 import Task from "./Task"; //<Task />
-import AddTask from "./AddTask"; //<Task />
+import AddTask from "./AddTask";
 
-export default function InvoiceTasks(tasks, setTasks){
+export default function InvoiceTasks({tasksArray, setTasksArray,handleTaskChange}){
 
+    function addTask(event){
+        //get the setThingsArray function ,
+                    // get prevState of Array,
+                                        // => return a new Array with oldValues + new Element, with Number of ArrayLength
+        setTasksArray(prevTasksArray => [...prevTasksArray, {
+            taskId: tasksArray.length +1,
+            [event.target.name]: event.target.value
+        }])
+    }
+
+    const tasksElements = tasksArray.map((task, index) => (
+        <li key={task.taskId}>
+            <Task value={[tasksArray.index]} handleTaskChange={handleTaskChange} />
+        </li>))
 
     return (
         
         <main className="main">
         <AddTask
-            tasks = {tasks}
-            setTasks = {setTasks}
+            addTask = {addTask}
+            handleTaskChange={handleTaskChange}
         />
 
             <div className="task-con-inputs">
@@ -22,10 +36,12 @@ export default function InvoiceTasks(tasks, setTasks){
             </div>
             <hr></hr>
             
-            <Task/>
-            {/* Unorderd List of Tasks to invoice */}
+
+            {/* Unordered List of Tasks to invoice */}
                 <div className="div-con-2">
-                    <ul id="tasks"></ul>
+                    <ul id="tasks">
+                        {tasksElements}
+                    </ul>
                     <ul id="summary"></ul>
                 </div>
 
@@ -39,6 +55,11 @@ export default function InvoiceTasks(tasks, setTasks){
             <div className="div-con-1">
                 <span id="total-sum-el">0 €</span>
             </div>
+
+
         </main>
     )
 }
+
+
+

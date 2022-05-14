@@ -2,7 +2,7 @@ import React from 'react';
 
 
 
-export default function Test() {
+export default function TestThingsArray() {
 
     //Initialize an Array of Things with useState |  default
     const [thingsArray, setThingsArray] = React.useState(["Thing 1", "Thing 2"])
