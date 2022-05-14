@@ -1,12 +1,12 @@
-import React, {useState} from 'react';
 
-export default function InvoiceOptions({
-    companiesBankAccount = {companiesBankAccount},
-    companiesBankName = {companiesBankName},
-    companiesBankIban = {companiesBankIban},
-    companiesBankBic = {companiesBankBic},
-    companiesTaxId = {companiesTaxId},
-    companiesParagraph = {companiesParagraph}
+export default function InvoiceNotes({
+    invoiceFormData,
+    companiesBankAccount = invoiceFormData.companiesBankAccount,
+    companiesBankName = invoiceFormData.companiesBankName,
+    companiesBankIban = invoiceFormData.companiesBankIban,
+    companiesBankBic = invoiceFormData.companiesBankBic,
+    companiesTaxId = invoiceFormData.companiesTaxId,
+    companiesParagraph = invoiceFormData.companiesParagraph
 }){
 
 
@@ -18,15 +18,15 @@ export default function InvoiceOptions({
             </div>
 
             <div className="companyBankInformation">
-                <div><span>BankAccount: </span>{companiesBankAccount}</div>
-                <div><span>Bankname: </span>{companiesBankName}</div>
-                <div><span>IBAN:</span>{companiesBankIban}</div>
-                <div><span>Bic:</span>{companiesBankBic}</div>
+                <div><span>BankAccount - </span>{companiesBankAccount}</div>
+                <div><span>Bankname - </span>{companiesBankName}</div>
+                <div><span>IBAN - </span>{companiesBankIban}</div>
+                <div><span>Bic - </span>{companiesBankBic}</div>
             </div>
 
             <div className="companyTaxInformation">
-                <div><span>SteuerId:</span>{companiesTaxId}</div>
-                <div><span>UstG:</span>{companiesParagraph}</div>
+                <div><span>SteuerId - </span>{companiesTaxId}</div>
+                <div><span>UstG - </span>{companiesParagraph}</div>
             </div>
         </div>
     )

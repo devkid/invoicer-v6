@@ -3,13 +3,11 @@ import InvoiceTaskOptions from "./InvoiceTaskOptions";
 
 export default function Task(
     props,
-    date,setDate,
-    task,setTask,
-    quantity,setQuantity,
-    price,setPrice,
-    total,setTotal,
-    unit,setUnit
+    tasksArray, setTasksArray,
+    handleTaskChange,
+
 ) {
+        {/*<label className="w mr-20" htmlFor={companiesFormData.companiesName}>Companies Name</label>*/}
 
 
     return (
@@ -20,24 +18,26 @@ export default function Task(
                     className="task-input"
                     type="date"
                     placeholder="Enter Date of Task"
-                    name="date"
-                    id="date"
+                    name="taskDate"
+                    id="taskDate"
                     autoComplete="off"
-                    value={date}
-                    onChange={(e) => setDate(e.target.value)}
+                    value={tasksArray.taskDate}
+                    onChange={handleTaskChange}
                 />
             </div>
+
+            {console.log(tasksArray)}
 
             <div className="task-con-task">
                 <input
                     className="task-input"
                     type="text"
                     placeholder="Enter a Task"
-                    name="task"
-                    id="task"
+                    name="taskName"
+                    id="taskName"
                     autoComplete="off"
-                    value={task}
-                    onChange={(e) => setTask(e.target.value)}
+                    value={tasksArray.taskName}
+                    onChange={handleTaskChange}
                 />
             </div>
 
@@ -46,11 +46,11 @@ export default function Task(
                     className="task-input"
                     type="text"
                     placeholder="Unit"
-                    name="unit"
-                    id="unit"
+                    name="taskUnit"
+                    id="taskUnit"
                     autoComplete="off"
-                    value={unit}
-                    onChange={(e) => setUnit(e.target.value)}
+                    value={tasksArray.taskUnit}
+                    onChange={handleTaskChange}
                 >
                     <option value="h">h</option>
                     <option value="min">min</option>
@@ -63,11 +63,11 @@ export default function Task(
                     className="task-input"
                     type="text"
                     placeholder="Enter quantity"
-                    name="quantity"
-                    id="quantity"
+                    name="taskQuantity"
+                    id="taskQuantity"
                     autoComplete="off"
-                    value={quantity}
-                    onChange={(e) => setQuantity(e.target.value)}
+                    value={tasksArray.taskQuantity}
+                    onChange={handleTaskChange}
                 />
             </div>
 
@@ -76,11 +76,11 @@ export default function Task(
                     className="task-input"
                     type="text"
                     placeholder="Enter a price"
-                    name="price"
-                    id="price"
+                    name="taskPrice"
+                    id="taskPrice"
                     autoComplete="off"
-                    value={price}
-                    onChange={(e) => setPrice(e.target.value)}
+                    value={tasksArray.taskPrice}
+                    onChange={handleTaskChange}
                 />
             </div>
 
@@ -91,11 +91,11 @@ export default function Task(
                     className="task-input"
                     type="text"
                     placeholder="0 €"
-                    name="total"
-                    id="total"
+                    name="taskTotal"
+                    id="taskTotal"
                     autoComplete="off"
-                    value={total}
-                    onChange={(e) => setTotal(e.target.value)}
+                    value={tasksArray.taskTotal}
+                    onChange={handleTaskChange}
                 />
             </div>
 

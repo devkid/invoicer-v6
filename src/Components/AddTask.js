@@ -1,19 +1,9 @@
 import React from 'react'
 import addTaskBtn from "../images/addCircle.png"
-import {nanoid} from "nanoid";
 
-export default function AddTask({setTask, setCurrentTaskId}) {
 
-    function addTask(){
-        console.log("addTask got clicked")
-        //
-        const newTask = {
-            id: nanoid()
-        }
-        setTask((prevTask) => [newTask, ...prevTask])
-        setCurrentTaskId(newTask.id)
-        console.log(setTask)
-    }
+export default function AddTask({addTask}) {
+
 
     return (
     <div className="div-con-2 ml-20">
