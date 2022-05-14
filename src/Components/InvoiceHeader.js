@@ -1,32 +1,9 @@
 
 export default function InvoiceHeader({
 //Props
-    addInvoice, setAddInvoice,
-    companiesName, setCompaniesName,
-    companiesStreet, setCompaniesStreet,
-    companiesZip, setCompaniesZip,
-    companiesCity, setCompaniesCity,
-    companiesCountry, setCompaniesCountry,
-    companiesPhone, setCompaniesPhone,
-    companiesEmail, setCompaniesEmail,
-    companiesWebsite, setCompaniesWebsite,
-    companiesBankAccount, setCompaniesBankAccount,
-    companiesBankName, setCompaniesBankName,
-    companiesBankIban, setCompaniesBankIban,
-    companiesBankBic, setCompaniesBankBic,
-
-    date, setDate,
-
-    clientFirstName, setClientFirstName,
-    clientLastName, setClientLastFirstName,
-    clientStreet, setClientStreet,
-    clientZip, setClientZip,
-    clientCity, setClientCity,
-    clientCountry, setClientCountry,
-    clientPhone, setClientPhone,
-    clientMobile, setClientMobile,
-    clientEmail,setClientEmail,
-    clientWebsite, setClientWebsite
+    companiesFormData, setCompaniesFormData,
+    clientFormData,
+    date,
 }){
 
     return (
@@ -38,20 +15,20 @@ export default function InvoiceHeader({
 
                 <div className="invoiceHeader-con">
                     <div className="clientInformation">
-                        <div><h2>{clientFirstName} {clientLastName}</h2></div>
-                        <div><span>{clientStreet}</span></div>
-                        <div><span>{clientZip} {clientCity}</span></div>
-                        <div><span>{clientCountry}</span></div>
+                        <div><h2>{clientFormData.clientFirstName} {clientFormData.clientLastName}</h2></div>
+                        <div><span>{clientFormData.clientStreet} {clientFormData.clientStreetNumber}</span></div>
+                        <div><span>{clientFormData.clientZip} {clientFormData.clientCity}</span></div>
+                        <div><span>{clientFormData.clientCountry}</span></div>
                     </div>
 
                     <div className="companyInformation">
-                        <div><h1>{companiesName}</h1></div>
-                        <div><span>{companiesStreet}</span></div>
-                        <div><span>{companiesZip} {companiesCity}</span></div>
-                        <div><span>{companiesCountry}</span></div>
-                        <div><span>{companiesPhone}</span></div>
-                        <div><span>{companiesEmail}</span></div>
-                        <div><span>{companiesWebsite}</span></div>
+                        <div><h1>{companiesFormData.companiesName}</h1></div>
+                        <div><span>{companiesFormData.companiesStreet} {companiesFormData.companiesStreetNumber}</span></div>
+                        <div><span>{companiesFormData.companiesZip} {companiesFormData.companiesCity}</span></div>
+                        <div><span>{companiesFormData.companiesCountry}</span></div>
+                        <div><span>{companiesFormData.companiesPhone}</span></div>
+                        <div><span>{companiesFormData.companiesEmail}</span></div>
+                        <div><span>{companiesFormData.companiesWebsite}</span></div>
                         
                     </div>
                 </div>
