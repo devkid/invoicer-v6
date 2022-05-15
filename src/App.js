@@ -35,9 +35,9 @@ export default function App() {
         companiesWebsite:"",
     })
 
-    useEffect(() => {
-        console.log("CompaniesFormData",companiesFormData)
-    },[companiesFormData])
+    // useEffect(() => {
+    //     console.log("CompaniesFormData",companiesFormData)
+    // },[companiesFormData])
 
 //Clients
 //TODO Check if clientFormData is defined
@@ -71,45 +71,19 @@ export default function App() {
 
 //InvoiceTasks
     //Initializes an Array of Things with useState |  default
-    const [tasksArray, setTasksArray] = React.useState([
-
-        {
-            taskId:"",
-            taskDate:"",
-            taskName:"",
-            taskUnit:"",
-            taskQuantity:"",
-            taskPrice:"",
-            taskTotal:""
-        },
-
-        ]
-    )
-
-//Task
-    const [task, setTask] = React.useState(
-            {
-                taskId:"",
-                taskDate:"",
-                taskName:"",
-                taskUnit:"",
-                taskQuantity:"",
-                taskPrice:"",
-                taskTotal:""
-            }
-    )
+    const [tasksArray, setTasksArray] = React.useState([])
 
     useEffect(() => {
         console.log("tasksArray",tasksArray)
     },[tasksArray])
 
-    useEffect(() => {
-        console.log("InvoiceFormData",invoiceFormData)
-    },[invoiceFormData])
+    // useEffect(() => {
+    //     console.log("InvoiceFormData",invoiceFormData)
+    // },[invoiceFormData])
 
-    useEffect(() => {
-        console.log("ClientFormData",clientFormData)
-    },[clientFormData])
+    // useEffect(() => {
+    //     console.log("ClientFormData",clientFormData)
+    // },[clientFormData])
 
     function handleCompaniesChange(event){
         setCompaniesFormData(prevFormData => {
@@ -138,34 +112,34 @@ export default function App() {
         })
     }
 
-    {/* // const handleTaskChange = index => event => {
-        //     console.log('index: ' + index)
-        //     console.log('name: '+ event.target.name)
-        //     let newArray = [...tasksArray] //Copying the old tasksArray
-        //     newArray[index] = event.target.value // replace event.target... with whatever you want to change it to
-        //     setTasksArray(newArray)
-        // */}
+    // function handleTaskChange(event){
+    //     setTasksArray(prevTasksArray => {
+    //         return {
+    //             ...prevTasksArray,
+    //             [event.target.index]: event.target.value
+    //         }
+    //     })
+    // }
 
-     function handleTaskChange(event){
-        setTasksArray(prevTasksArray =>{
-            return {
-                ...prevTasksArray,
-                [event.target.name]: event.target.value
-                }
-            })
-        }
+     // const handleTaskChange = index => event => {
+     //     console.log('index: ' + index)
+     //     console.log('name: ' + event.target.name)
+     //     let newArray = [...tasksArray] //Copying the old tasksArray
+     //     newArray[index] = event.target.value // replace event.target... with whatever you want to change it to
+     //     setTasksArray(newArray)
+     // }
 
-    {/*    // function handleTaskChange(event){
-        //     setTasksArray(prevTaskArray =>{
-        //         return prevTaskArray.map((task)=>{
-        //             return task.taskId === taskId ? {
-        //                 ...prevTaskArray,
-        //                 [event.target.name]: event.target.value
-        //            })
-        //         })
-        //     })
-        // }
-    */}
+
+     // function handleTaskChange(event){
+     //    setTasksArray(prevTasksArray =>{
+     //        return {
+     //            ...prevTasksArray,
+     //            [event.target.index]: event.target.value
+     //            }
+     //        })
+     //    }
+
+
     const handlePrint = () => {
         window.print()
     }
@@ -203,9 +177,6 @@ export default function App() {
                     <InvoiceTasks
                         tasksArray={tasksArray}
                         setTasksArray={setTasksArray}
-                        task={task}
-                        setTask={setTask}
-                        handleTaskChange={handleTaskChange}
                     />
 
                     <InvoiceNotes
