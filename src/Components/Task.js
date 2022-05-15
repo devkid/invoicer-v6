@@ -7,7 +7,7 @@ export default function Task(
     handleTaskChange,
 
 ) {
-        {/*<label className="w mr-20" htmlFor={companiesFormData.companiesName}>Companies Name</label>*/}
+        /*<label className="w mr-20" htmlFor={companiesFormData.companiesName}>Companies Name</label>*/
 
 
     return (
