@@ -21,14 +21,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/package.json" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/BWueppen/Documents/GitHub/invoicer-v6",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RunManager">
     <configuration name="start" type="js.build_tools.npm" singleton="false" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
@@ -52,6 +54,7 @@
       <workItem from="1652165633039" duration="797000" />
       <workItem from="1652166439127" duration="624000" />
       <workItem from="1652168081123" duration="2415000" />
+      <workItem from="1652559424385" duration="304000" />
     </task>
     <servers />
   </component>
