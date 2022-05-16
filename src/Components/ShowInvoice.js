@@ -1,0 +1,73 @@
+import React, {useState} from "react";
+
+export default function ShoInvoice(){
+    const [invoices, setInvoics] = useState([
+        {
+            invoiceFormData:
+                [{
+                    invoiceId:"",
+                    invoiceDate:"",
+                    invoiceNumber:"",
+                    dueDate:""
+                }],
+            companiesFormData:
+                [{
+                    companiesId:"",
+                    companiesName:"",
+                    firstName:"",
+                    lastName:"",
+                    companiesStreet:"",
+                    companiesStreetNumber:"",
+                    companiesZip:"",
+                    companiesCity:"",
+                    companiesCountry:"",
+                    companiesPhone:"",
+                    companiesEmail:"",
+                    companiesWebsite:"",
+                    companiesBankAccount:"",
+                    companiesBankName:"",
+                    companiesBankIban:"",
+                    companiesBankBic:""
+                }],
+            clientFormData:
+                [{
+                    clientId:"",
+                    clientFirstName:"",
+                    clientLastName:"",
+                    clientStreet:"",
+                    clientStreetNumber:"",
+                    clientZip:"",
+                    clientCity:"",
+                    clientCountry:"",
+                    clientPhone:"",
+                    clientEmail:"",
+                    clientWebsite:"",
+                }],
+            taskFormData:[
+                {
+                    taskId:"",
+                    taskDate:"",
+                    taskName:"",
+                    taskUnit:"",
+                    taskQuantity:"",
+                    taskPrice:"",
+                    taskTotal:""
+                },
+                {
+                    taskId:"",
+                    taskDate:"",
+                    taskName:"",
+                    taskUnit:"",
+                    taskQuantity:"",
+                    taskPrice:"",
+                    taskTotal:""
+                }
+            ]
+        }
+        ])
+    return (
+        <div>
+            <h1>Hallo</h1>
+        </div>
+    )
+}
