@@ -2,9 +2,8 @@ import React from "react";
 
 export default function InvoiceFormData({
     handleInvoiceChange,
-    invoiceFormData, setInvoiceFormData,
-    createInvoice, setCreateInvoice
-
+    memoAddInvoice,
+    invoiceFormData,
 }) {
 
 
@@ -185,7 +184,7 @@ export default function InvoiceFormData({
 
                 <button
                     className="mt-20"
-                    onClick={() => setCreateInvoice(false)}
+                    onClick={memoAddInvoice}
                     id="show-invoice-mask"
                 >
                     Create Invoice

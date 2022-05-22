@@ -7,12 +7,8 @@ import downloadBtnIcon from"../images/download_white.png";
 import previewBtnIcon from"../images/monitor_white.png";
 import sendMailBtnIcon from"../images/sendMail_white.png";
 
-export default function Header({handlePrint, setCreateInvoice, setShowInvoice})  {
+export default function Header({handlePrint, memoAddInvoice})  {
    
-    function editTask(){
-        //Get task by Id and Patch it 
-        console.log("editTask")
-    }
 
     return (
         <header>
@@ -25,15 +21,14 @@ export default function Header({handlePrint, setCreateInvoice, setShowInvoice}) 
                     
                     <button 
                     className="addInvoice-btn"
-                    onClick={() => setCreateInvoice(true)}
+                    onClick={memoAddInvoice}
                     >
                     <img src={addBtnIcon} alt="addBtnIcon"/>
                     </button>
                     
                     <button 
                         className="editInvoice-btn"
-                        onClick={editTask}
-
+                        //TODO edit Task
 
                     >
                     <img src={editNoteBtnIcon} alt="editNoteBtnIcon"/>
@@ -66,7 +61,7 @@ export default function Header({handlePrint, setCreateInvoice, setShowInvoice}) 
                 <div className="preview-invoice-btn-l">
                     <button 
                         className="previewInvoice-btn"
-                        onClick={() => setShowInvoice(true)}
+                        //TODO onClcik showPreviewInvoice
                     >
                     <img src={previewBtnIcon} alt="previewBtnIcon"/>Preview Invoice
                     </button>

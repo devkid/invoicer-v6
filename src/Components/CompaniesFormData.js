@@ -1,17 +1,12 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useCallback, memo} from 'react';
 
 
 export default function CompaniesFormData({
 //Props
     handleCompaniesChange,
-    companiesFormData, setCompaniesFormData,
-    createInvoice, setCreateInvoice,
-
+    companiesFormData, 
 }) {
 
-    useEffect(() => {
-        console.log("setAddInvoice", setCreateInvoice)
-    },[setCreateInvoice])
 
     return (
         <div className="addInvoice">
@@ -172,3 +167,47 @@ export default function CompaniesFormData({
         </div>
     )
 }
+
+//  // no localStorage involved
+//   //const [notes, setNotes] = useState([]);
+
+//   // get data from localStorage State
+//   const [notes, setNotes] = useState(
+//     () =>JSON.parse(localStorage.getItem("notes")) || []
+//   );
+  
+//   // set data in localStorage State
+//   useEffect(() => {
+//     localStorage.setItem("notes", JSON.stringify(notes))
+//   },[notes]);
+
+//   // userInput State
+//   const [userInput, setUserInput] = useState("");
+
+//   // add a note to notes
+//   const memoAddNote = useCallback(() => {
+//     setNotes((notes) => [...notes, {
+//       id: notes.length +1,
+//       body: userInput,
+//       isDone: false
+
+//     }])
+//     setUserInput("")
+
+//   },[userInput])
+  
+//   // get userInput
+//   const memoUserInput = useCallback((event) => {
+//     setUserInput(event.target.value)
+//   },[setUserInput])
+
+//   const memoDeleteNote = (id) => {
+//     const newNotesList = notes.filter((note) => note.id !== id)
+//     setNotes(newNotesList) 
+//   }
+
+//   const memoCheckBox = useCallback((id) =>{
+//     setNotes(prevNotes => prevNotes.map((note) =>{
+//       return note.id === id ? {...note, isDone: !notes.isDone} : note
+//     }))
+//   },[notes.isDone])

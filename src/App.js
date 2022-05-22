@@ -1,4 +1,4 @@
-import React, {useState, useMemo, useEffect} from 'react';
+import React, {useState, useMemo, useEffect, useCallback} from 'react';
 
 import Header from "./Components/Header"
 import InvoiceHeader from "./Components/InvoiceHeader"
@@ -16,75 +16,109 @@ export default function App() {
     const memoDate = useMemo(() => new Date(),[]).toLocaleDateString()
 
 //App
-    const [showInvoice, setShowInvoice] = useState(false)
-//    const [addNewInvoice, setAddNewInvoice] = useState(false)
+    // switch between invoice and invoiceCreator 
+    const [showInvoice, setShowInvoice] = useState(true)
+    // invoiceCreator (companiesFormData, clietFormData, invoiceFormData)
     const [createInvoice, setCreateInvoice] = useState(false)
+
 //Companies
+    const [companiesFormData, setCompaniesFormData] = useState([]);
+    //Todo 
+    const memoAddCompaniesData = useCallback(() => {
+        setCompaniesFormData((companiesFormData) => [...companiesFormData, {
+            id: companiesFormData.length + 1,
+            companiesName:"",
+            firstName:"",
+            lastName:"",
+            companiesStreet:"",
+            companiesStreetNumber:"",
+            companiesZip:"",
+            companiesCity:"",
+            companiesCountry:"",
+            companiesPhone:"",
+            companiesEmail:"",
+            companiesWebsite:"",
+        }])
+        setShowInvoice( !showInvoice)
+    },[setCompaniesFormData, showInvoice])
 
-    const [companiesFormData, setCompaniesFormData] = useState({
-        companiesName:"",
-        firstName:"",
-        lastName:"",
-        companiesStreet:"",
-        companiesStreetNumber:"",
-        companiesZip:"",
-        companiesCity:"",
-        companiesCountry:"",
-        companiesPhone:"",
-        companiesEmail:"",
-        companiesWebsite:"",
-    })
+ console.log("companiesFD",companiesFormData)
+ console.log("createInvoice",createInvoice)
 
-    // useEffect(() => {
-    //     console.log("CompaniesFormData",companiesFormData)
-    // },[companiesFormData])
-
-//Clients
+ //Clients
 //TODO Check if clientFormData is defined
-    const [clientFormData, setClientFormData] = useState({
-        clientFirstName: "",
-        clientLastName: "",
-        clientStreet: "",
-        clientStreetNumber: "",
-        clientZip: "",
-        clientCity: "",
-        clientCountry: "",
-        clientPhone: "",
-        clientMobile: "",
-        clientEmail: "",
-        clientWebsite:""
-    })
+    const [clientFormData, setClientFormData] = useState([]);
+
+    const memoAddClientData = useCallback(() => {
+        setClientFormData((clientFormData) => [...clientFormData,{
+            clientFirstName: "",
+            clientLastName: "",
+            clientStreet: "",
+            clientStreetNumber: "",
+            clientZip: "",
+            clientCity: "",
+            clientCountry: "",
+            clientPhone: "",
+            clientMobile: "",
+            clientEmail: "",
+            clientWebsite:""
+        }])
+
+    },[setClientFormData])
+
 
 //InvoiceDetails
-    const [invoiceFormData, setInvoiceFormData] = useState({
-        date: "",
-        invoiceDate:"",
-        invoiceNumber:"",
-        dueDate:"",
-        companiesBankAccount:"",
-        companiesBankName:"",
-        companiesBankIban:"",
-        companiesBankBic:"",
-        companiesTaxId:"",
-        companiesParagraph:""
-    })
+    const [invoiceFormData, setInvoiceFormData] = useState([]);
+    
+    const memoAddInvoiceData = useCallback(() => {
+        setInvoiceFormData((invoiceFormData) => [...invoiceFormData,{
+            date: "",
+            invoiceDate:"",
+            invoiceNumber:"",
+            dueDate:"",
+            companiesBankAccount:"",
+            companiesBankName:"",
+            companiesBankIban:"",
+            companiesBankBic:"",
+            companiesTaxId:"",
+            companiesParagraph:""
+        }])
 
+    },[setInvoiceFormData])
+        
+   
+
+// InvoicesArray
+
+const [invoicesArray, setInvoicesArray] = useState([])
+
+
+const memoAddInvoice = useCallback(() => {
+    setInvoicesArray((invoicesArray) => [...invoicesArray, [
+        clientFormData,
+        companiesFormData,
+        invoiceFormData
+    ]
+    
+    ])
+    setShowInvoice(!showInvoice)
+
+},
+[clientFormData, companiesFormData, 
+showInvoice, invoiceFormData])
+
+console.log("showInvoice", showInvoice)
+
+console.log(invoicesArray)
 //InvoiceTasks
     //Initializes an Array of Things with useState |  default
     const [tasksArray, setTasksArray] = React.useState([])
 
-    useEffect(() => {
-        console.log("tasksArray",tasksArray)
-    },[tasksArray])
-
     // useEffect(() => {
-    //     console.log("InvoiceFormData",invoiceFormData)
-    // },[invoiceFormData])
+    //     console.log("tasksArray",tasksArray)
+    // },[tasksArray])
 
-    // useEffect(() => {
-    //     console.log("ClientFormData",clientFormData)
-    // },[clientFormData])
-
+  
     function handleCompaniesChange(event){
         setCompaniesFormData(prevFormData => {
             return {
@@ -112,34 +146,6 @@ export default function App() {
         })
     }
 
-    // function handleTaskChange(event){
-    //     setTasksArray(prevTasksArray => {
-    //         return {
-    //             ...prevTasksArray,
-    //             [event.target.index]: event.target.value
-    //         }
-    //     })
-    // }
-
-     // const handleTaskChange = index => event => {
-     //     console.log('index: ' + index)
-     //     console.log('name: ' + event.target.name)
-     //     let newArray = [...tasksArray] //Copying the old tasksArray
-     //     newArray[index] = event.target.value // replace event.target... with whatever you want to change it to
-     //     setTasksArray(newArray)
-     // }
-
-
-     // function handleTaskChange(event){
-     //    setTasksArray(prevTasksArray =>{
-     //        return {
-     //            ...prevTasksArray,
-     //            [event.target.index]: event.target.value
-     //            }
-     //        })
-     //    }
-
-
     const handlePrint = () => {
         window.print()
     }
@@ -152,14 +158,15 @@ export default function App() {
         <div className="App">
             {/* if createInvoice is false or falthy render below code */}
 
-            {!createInvoice ?
+            {showInvoice ?
                 <div>
                     {/* Passing down props and func's */}
                     <Header
                         handlePrint={handlePrint}
+                        memoAddCompaniesData={memoAddCompaniesData}
+                        memoAddInvoice={memoAddInvoice}
                         handleDownload = {handleDownload}
                         setShowInvoice = {setShowInvoice}
-                        setCreateInvoice = {setCreateInvoice}
                     />
 
                     <InvoiceHeader
@@ -172,6 +179,8 @@ export default function App() {
                     <InvoiceDetails
                         invoiceFormData = {invoiceFormData}
                         memoDate ={memoDate}
+                        memoAddCompaniesData={memoAddCompaniesData}
+
                     />
 
                     <InvoiceTasks
@@ -180,6 +189,7 @@ export default function App() {
                     />
 
                     <InvoiceNotes
+                        invoiceFormData={invoiceFormData}
                         companiesBankAccount = {invoiceFormData.companiesBankAccount}
                         companiesBankName = {invoiceFormData.companiesBankName}
                         companiesBankIban = {invoiceFormData.companiesBankIban}
@@ -195,17 +205,12 @@ export default function App() {
                     <div>
                         <CompaniesFormData
                             handleCompaniesChange = {handleCompaniesChange}
-                            setCreateInvoice = {setCreateInvoice}
+                            setShowInvoice = {setShowInvoice}
                             companiesFormData = {companiesFormData}
-                            setCompaniesFormData = {setCompaniesFormData}
-                            clientFormData = {clientFormData}
-                            setClientFormData = {setClientFormData}
-                            invoiceFormData = {invoiceFormData}
-                            setInvoiceFormData={setInvoiceFormData}
                         />
                         <ClientFormData
                             handleClientChange = {handleClientChange}
-                            setCreateInvoice = {setCreateInvoice}
+                            setShowInvoice = {setShowInvoice}
                             companiesFormData = {companiesFormData}
                             clientFormData = {clientFormData}
                             setClientFormData = {setClientFormData}
@@ -214,8 +219,9 @@ export default function App() {
                         />
                         <InvoiceFormData
                             handleInvoiceChange = {handleInvoiceChange}
+                            memoAddInvoice ={memoAddInvoice}
                             memoDate = {memoDate}
-                            setCreateInvoice = {setCreateInvoice}
+                            setShowInvoice = {setShowInvoice}
                             companiesFormData = {companiesFormData}
                             setCompaniesFormData = {setCompaniesFormData}
                             clientFormData = {clientFormData}
