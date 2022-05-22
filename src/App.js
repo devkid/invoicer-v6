@@ -88,7 +88,7 @@ export default function App() {
         
    
 
-// InvoicesArray
+// InvoicesArray...
 
 const [invoicesArray, setInvoicesArray] = useState([])
 
