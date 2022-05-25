@@ -1,8 +1,8 @@
 import React from "react";
 
 export default function InvoiceFormData({
-    handleInvoiceChange,
-    memoAddInvoice,
+    onInvoiceChange,
+    onAddInvoice,
     invoiceFormData,
 }) {
 
@@ -22,7 +22,7 @@ export default function InvoiceFormData({
                         id="date"
                         autoComplete="off"
                         value={invoiceFormData.date}
-                        onChange={handleInvoiceChange}
+                        onChange={onInvoiceChange}
                     />
                 </div>
 
@@ -37,7 +37,7 @@ export default function InvoiceFormData({
                         id="clientId"
                         autoComplete="off"
                         value={invoiceFormData.clientId}
-                        onChange={handleInvoiceChange}
+                        onChange={onInvoiceChange}
                     />
                 </div>
 
@@ -52,7 +52,7 @@ export default function InvoiceFormData({
                         id="clientLastName"
                         autoComplete="off"
                         value={invoiceFormData.clientLastName}
-                        onChange={handleInvoiceChange}
+                        onChange={onInvoiceChange}
                     />
                 </div>
 
@@ -66,7 +66,7 @@ export default function InvoiceFormData({
                         id="invoiceDate"
                         autoComplete="off"
                         value={invoiceFormData.invoiceDate}
-                        onChange={handleInvoiceChange}
+                        onChange={onInvoiceChange}
                     />
                 </div>
 
@@ -80,7 +80,7 @@ export default function InvoiceFormData({
                         id="invoiceNumber"
                         autoComplete="off"
                         value={invoiceFormData.invoiceNumber}
-                        onChange={handleInvoiceChange}
+                        onChange={onInvoiceChange}
                     />
                 </div>
 
@@ -94,7 +94,7 @@ export default function InvoiceFormData({
                         id="dueDate"
                         autoComplete="off"
                         value={invoiceFormData.dueDate}
-                        onChange={handleInvoiceChange}
+                        onChange={onInvoiceChange}
                     />
                 </div>
 
@@ -108,7 +108,7 @@ export default function InvoiceFormData({
                         id="companiesBankAccount"
                         autoComplete="off"
                         value={invoiceFormData.companiesBankAccount}
-                        onChange={handleInvoiceChange}
+                        onChange={onInvoiceChange}
                     />
                 </div>
 
@@ -122,7 +122,7 @@ export default function InvoiceFormData({
                         id="companiesBankName"
                         autoComplete="off"
                         value={invoiceFormData.companiesBankName}
-                        onChange={handleInvoiceChange}
+                        onChange={onInvoiceChange}
                     />
                 </div>
 
@@ -136,7 +136,7 @@ export default function InvoiceFormData({
                         id="companiesBankIban"
                         autoComplete="off"
                         value={invoiceFormData.companiesBankIban}
-                        onChange={handleInvoiceChange}
+                        onChange={onInvoiceChange}
                     />
                 </div>
 
@@ -150,7 +150,7 @@ export default function InvoiceFormData({
                         id="companiesBankBic"
                         autoComplete="off"
                         value={invoiceFormData.companiesBankBic}
-                        onChange={handleInvoiceChange}
+                        onChange={onInvoiceChange}
                     />
                 </div>
 
@@ -164,7 +164,7 @@ export default function InvoiceFormData({
                         id="companiesTaxId"
                         autoComplete="off"
                         value={invoiceFormData.companiesTaxId}
-                        onChange={handleInvoiceChange}
+                        onChange={onInvoiceChange}
                     />
                 </div>
 
@@ -178,13 +178,13 @@ export default function InvoiceFormData({
                         id="companiesParagraph"
                         autoComplete="off"
                         value={invoiceFormData.companiesParagraph}
-                        onChange={handleInvoiceChange}
+                        onChange={onInvoiceChange}
                     />
                 </div>
 
                 <button
                     className="mt-20"
-                    onClick={memoAddInvoice}
+                    onClick={onAddInvoice}
                     id="show-invoice-mask"
                 >
                     Create Invoice

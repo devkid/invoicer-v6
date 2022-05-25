@@ -3,6 +3,11 @@ import InvoiceTaskOptions from "./InvoiceTaskOptions";
 
 export default function InvoiceTasks({tasksArray, setTasksArray}){
 
+    //TODO
+    // use useCllback with props onchange und function handlechange 
+    //change <hr> tags to css element
+    //make task elements permanently shown 
+
     function addTask(){
         //get the setThingsArray function ,
                     // get prevState of Array,

@@ -2,9 +2,8 @@ import React from "react";
 
 export default function ClientFormData({
 //Props
-     handleClientChange,
-     createInvoice, setCreateInvoice,
-     clientFormData, setClientFormData,
+     onClientChange,
+     clientFormData
  }) {
 
      return (
@@ -22,7 +21,7 @@ export default function ClientFormData({
                      id="clientFirstName"
                      autoComplete="off"
                      value={clientFormData.clientFirstName}
-                     onChange={handleClientChange}
+                     onChange={onClientChange}
                  />
              </div>
 
@@ -36,7 +35,7 @@ export default function ClientFormData({
                      id="clientLastName"
                      autoComplete="off"
                      value={clientFormData.clientLastName}
-                     onChange={handleClientChange}
+                     onChange={onClientChange}
                  />
              </div>
 
@@ -50,7 +49,7 @@ export default function ClientFormData({
                      id="clientStreet"
                      autoComplete="off"
                      value={clientFormData.clientStreet}
-                     onChange={handleClientChange}
+                     onChange={onClientChange}
                  />
              </div>
 
@@ -64,7 +63,7 @@ export default function ClientFormData({
                      id="clientStreetNumber"
                      autoComplete="off"
                      value={clientFormData.clientStreetNumber}
-                     onChange={handleClientChange}
+                     onChange={onClientChange}
                  />
              </div>
 
@@ -78,7 +77,7 @@ export default function ClientFormData({
                      id="clientZip"
                      autoComplete="off"
                      value={clientFormData.clientZip}
-                     onChange={handleClientChange}
+                     onChange={onClientChange}
                  />
              </div>
 
@@ -92,7 +91,7 @@ export default function ClientFormData({
                      id="clientCity"
                      autoComplete="off"
                      value={clientFormData.clientCity}
-                     onChange={handleClientChange}
+                     onChange={onClientChange}
                  />
              </div>
 
@@ -107,7 +106,7 @@ export default function ClientFormData({
                      id="clientCountry"
                      autoComplete="off"
                      value={clientFormData.clientCountry}
-                     onChange={handleClientChange}
+                     onChange={onClientChange}
                  />
              </div>
 
@@ -121,7 +120,7 @@ export default function ClientFormData({
                      id="clientPhone"
                      autoComplete="off"
                      value={clientFormData.clientPhone}
-                     onChange={handleClientChange}
+                     onChange={onClientChange}
                  />
              </div>
 
@@ -135,7 +134,7 @@ export default function ClientFormData({
                      id="clientMobile"
                      autoComplete="off"
                      value={clientFormData.clientMobile}
-                     onChange={handleClientChange}
+                     onChange={onClientChange}
                  />
              </div>
 
@@ -149,7 +148,7 @@ export default function ClientFormData({
                      id="clientEmail"
                      autoComplete="off"
                      value={clientFormData.clientEmail}
-                     onChange={handleClientChange}
+                     onChange={onClientChange}
                  />
              </div>
 
@@ -163,7 +162,7 @@ export default function ClientFormData({
                      id="clientWebsite"
                      autoComplete="off"
                      value={clientFormData.clientWebsite}
-                     onChange={handleClientChange}
+                     onChange={onClientChange}
                  />
              </div>
          </div>

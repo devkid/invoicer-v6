@@ -7,7 +7,7 @@ import downloadBtnIcon from"../images/download_white.png";
 import previewBtnIcon from"../images/monitor_white.png";
 import sendMailBtnIcon from"../images/sendMail_white.png";
 
-export default function Header({handlePrint, memoAddInvoice})  {
+export default function Header({handlePrint , setShowInvoice, showInvoice})  {
    
 
     return (
@@ -17,13 +17,14 @@ export default function Header({handlePrint, memoAddInvoice})  {
                     <button 
                         className="invoiceMenu-btn"
                     >
-                    <img src={menuBtnIcon} alt="menuBtnIcon"/></button>
+                        <img src={menuBtnIcon} alt="menuBtnIcon"/>
+                    </button>
                     
                     <button 
-                    className="addInvoice-btn"
-                    onClick={memoAddInvoice}
+                        className="addInvoice-btn"
+                        onClick={() => setShowInvoice(!showInvoice)}
                     >
-                    <img src={addBtnIcon} alt="addBtnIcon"/>
+                        <img src={addBtnIcon} alt="addBtnIcon"/>
                     </button>
                     
                     <button 
@@ -31,7 +32,7 @@ export default function Header({handlePrint, memoAddInvoice})  {
                         //TODO edit Task
 
                     >
-                    <img src={editNoteBtnIcon} alt="editNoteBtnIcon"/>
+                        <img src={editNoteBtnIcon} alt="editNoteBtnIcon"/>
                     </button>
                 </div>
 
@@ -39,20 +40,20 @@ export default function Header({handlePrint, memoAddInvoice})  {
                     <button 
                         className="saveInvoice-btn"
                     >
-                    <img src={saveBtnIcon} alt="saveBtnIcon"/>
+                        <img src={saveBtnIcon} alt="saveBtnIcon"/>
                     </button>
                     
                     <button 
                         className="printInvoice-btn"
                         onClick={handlePrint}
                     >
-                    <img src={printBtnIcon} alt="printBtnIcon"/>
+                        <img src={printBtnIcon} alt="printBtnIcon"/>
                     </button>
                     
                     <button 
                         className="downloadInvoice-btn"
                     >
-                    <img src={downloadBtnIcon} alt="dowloadBtnIcon"/>
+                        <img src={downloadBtnIcon} alt="dowloadBtnIcon"/>
                     </button>
 
                 </div>
@@ -63,7 +64,7 @@ export default function Header({handlePrint, memoAddInvoice})  {
                         className="previewInvoice-btn"
                         //TODO onClcik showPreviewInvoice
                     >
-                    <img src={previewBtnIcon} alt="previewBtnIcon"/>Preview Invoice
+                        <img src={previewBtnIcon} alt="previewBtnIcon"/>Preview Invoice
                     </button>
                 </div>
                 
@@ -76,7 +77,7 @@ export default function Header({handlePrint, memoAddInvoice})  {
                     <button 
                         className="sendInvoice-btn"
                     >
-                    <img src={sendMailBtnIcon} alt="sendMailBtnIcon"/>Send Invoice
+                        <img src={sendMailBtnIcon} alt="sendMailBtnIcon"/>Send Invoice
                     </button>
                 </div>
 

@@ -1,9 +1,9 @@
-import React, {useEffect, useCallback, memo} from 'react';
+import React from 'react';
 
 
 export default function CompaniesFormData({
 //Props
-    handleCompaniesChange,
+    onCompaniesChange,
     companiesFormData, 
 }) {
 
@@ -22,7 +22,7 @@ export default function CompaniesFormData({
                             id="companiesName"
                             autoComplete="off"
                             value={companiesFormData.companiesName}
-                            onChange={handleCompaniesChange}
+                            onChange={onCompaniesChange}
                         />
                     </div>
 
@@ -36,7 +36,7 @@ export default function CompaniesFormData({
                             id="firstName"
                             autoComplete="off"
                             value={companiesFormData.firstName}
-                            onChange={handleCompaniesChange}
+                            onChange={onCompaniesChange}
                         />
                     </div>
 
@@ -50,7 +50,7 @@ export default function CompaniesFormData({
                             id="lastName"
                             autoComplete="off"
                             value={companiesFormData.lastName}
-                            onChange={handleCompaniesChange}
+                            onChange={onCompaniesChange}
                         />
                     </div>
 
@@ -64,7 +64,7 @@ export default function CompaniesFormData({
                     id="companiesStreet"
                     autoComplete="off"
                     value={companiesFormData.companiesStreet}
-                    onChange={handleCompaniesChange}
+                    onChange={onCompaniesChange}
                 />
             </div>
             <div className="task-con-inputFlex">
@@ -77,7 +77,7 @@ export default function CompaniesFormData({
                     id="companiesStreetNumber"
                     autoComplete="off"
                     value={companiesFormData.companiesStreetNumber}
-                    onChange={handleCompaniesChange}
+                    onChange={onCompaniesChange}
                 />
             </div>
 
@@ -91,7 +91,7 @@ export default function CompaniesFormData({
                             id="companiesZip"
                             autoComplete="off"
                             value={companiesFormData.companiesZip}
-                            onChange={handleCompaniesChange}
+                            onChange={onCompaniesChange}
                         />
                     </div>
 
@@ -105,7 +105,7 @@ export default function CompaniesFormData({
                             id="companiesCity"
                             autoComplete="off"
                             value={companiesFormData.companiesCity}
-                            onChange={handleCompaniesChange}
+                            onChange={onCompaniesChange}
                         />
                     </div>
 
@@ -119,7 +119,7 @@ export default function CompaniesFormData({
                             id="companiesCountry"
                             autoComplete="off"
                             value={companiesFormData.companiesCountry}
-                            onChange={handleCompaniesChange}
+                            onChange = {onCompaniesChange}
                         />
                     </div>
 
@@ -133,7 +133,7 @@ export default function CompaniesFormData({
                             id="companiesPhone"
                             autoComplete="off"
                             value={companiesFormData.companiesPhone}
-                            onChange={handleCompaniesChange}
+                            onChange={onCompaniesChange}
                         />
                     </div>
 
@@ -147,7 +147,7 @@ export default function CompaniesFormData({
                             id="companiesEmail"
                             autoComplete="off"
                             value={companiesFormData.companiesEmail}
-                            onChange={handleCompaniesChange}
+                            onChange={onCompaniesChange}
                         />
                     </div>
 
@@ -161,7 +161,7 @@ export default function CompaniesFormData({
                             id="companiesWebsite"
                             autoComplete="off"
                             value={companiesFormData.companiesWebsite}
-                            onChange={handleCompaniesChange}
+                            onChange={onCompaniesChange}
                         />
                     </div>
         </div>
@@ -198,7 +198,7 @@ export default function CompaniesFormData({
   
 //   // get userInput
 //   const memoUserInput = useCallback((event) => {
-//     setUserInput(event.target.value)
+//     setUserInput(...prevUserInput, [event.target,name]: event.target.value)
 //   },[setUserInput])
 
 //   const memoDeleteNote = (id) => {

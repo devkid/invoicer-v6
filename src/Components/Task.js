@@ -2,12 +2,14 @@ import React from 'react';
 import InvoiceTaskOptions from "./InvoiceTaskOptions";
 
 export default function Task(
-    props,
-    tasksArray, setTasksArray,
+    tasksArray, 
     handleTaskChange,
 
 ) {
-        /*<label className="w mr-20" htmlFor={companiesFormData.companiesName}>Companies Name</label>*/
+        
+    //TODO
+    //<div> elemnets /*<label className="w mr-20" htmlFor={companiesFormData.companiesName}>Companies Name</label>*/
+    //handleTaskChange ? 
 
 
     return (
@@ -25,8 +27,6 @@ export default function Task(
                     onChange={handleTaskChange}
                 />
             </div>
-
-            {console.log(tasksArray)}
 
             <div className="task-con-task">
                 <input
