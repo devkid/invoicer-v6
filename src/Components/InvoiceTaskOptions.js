@@ -4,17 +4,17 @@ import deleteBtnIcon from "../images/delete.png";
 import addBtnIcon from "../images/add.png";
 
 
-export default function InvoiceTaskOptions({ onDeleteTask, onSubmitTask}) {
+export default function InvoiceTaskOptions({ handleDeleteTask, handleSubmitTask}) {
 
-    const handleSubmitTask = useCallback(() => {
-        console.log("handleSubmitTask got clicked");
-        onSubmitTask()
-    }, [onSubmitTask])
+    // const handleSubmitTask = useCallback(() => {
+    //     console.log("handleSubmitTask got clicked");
+    //     onSubmitTask()
+    // }, [onSubmitTask])
 
-    const handleDeleteTask = useCallback(() => {
-        console.log("handleDelete got clicked");
-        onDeleteTask()
-    }, [onDeleteTask])
+    // const handleDeleteTask = useCallback(() => {
+    //     console.log("handleDelete got clicked");
+    //     onDeleteTask()
+    // }, [onDeleteTask])
 
     return (
         <div className="div-con-3">

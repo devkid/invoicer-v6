@@ -95,6 +95,8 @@ export default function App() {
 
     }, [setClientFormData])
 
+   
+
     console.log("CL-clientFormData", clientFormData)
 
     //InvoiceDetails
@@ -127,6 +129,7 @@ export default function App() {
     }, [setInvoiceFormData])
 
     // InvoiceTasks
+    // Task
 
     const [task, setTask] = useState('');
 
@@ -149,17 +152,6 @@ export default function App() {
         setTask('');
     };
 
-
-
-
-
-
-
-
-
-    // // Task
-    // const [tasks, setTasks] = useState([]);
-
     // get data from localStorage State
     const [tasksFormData, setTasksFormData] = useState(
         () => JSON.parse(localStorage.getItem("tasksFormData")) || []
@@ -170,34 +162,6 @@ export default function App() {
         localStorage.setItem("tasksFormData", JSON.stringify(tasksFormData))
     }, [tasksFormData]);
 
-    // const [total, setTotal] = useState("");
-
-    // const handleAddTask = useCallback(() => {
-    //     // get the setTasksFormData function , // get prevState of Array, // => return a new Array with oldValues + new Element, with nanoId
-    //     setTasksFormData(prevtasksFormData => [...prevtasksFormData, {
-    //         invoiceId: "",
-    //         taskId: "",
-    //         taskDate: "",
-    //         taskName: "",
-    //         taskUnit: "",
-    //         taskQuantity: "",
-    //         taskPrice: "",
-    //         taskTotal: "",
-    //     }
-    //     ])
-    // }, [])
-
-    // // TODO fix HandleTaskChange 
-    // const handleTaskChange = useCallback((event) => {
-    //     setTasks(prevFormData => {
-    //         return {
-    //             ...prevFormData,
-    //             [event.target.name]: event.target.value
-    //         }
-    //     })
-
-    // }, [setTasks])
-
     useEffect(() => {
         console.log("ue-tasksFormData", tasksFormData)
     }, [tasksFormData])
@@ -205,6 +169,8 @@ export default function App() {
     useEffect(() => {
         console.log("ue-tasks", tasks)
     }, [tasks])
+
+    console.log("task", task)
 
     // InvoicesArray...
     // get data from localStorage State
@@ -225,16 +191,17 @@ export default function App() {
             { companiesFormData },
             { clientFormData },
             { invoiceFormData },
-            { tasksFormData }
+            { tasks }
         ]
 
         ])
         setShowInvoice(!showInvoice)
-
+        
     },
-        [clientFormData, companiesFormData, invoiceFormData, showInvoice, tasksFormData])
+        [clientFormData, companiesFormData, invoiceFormData, showInvoice, tasks])
 
     console.log("CL-createInvoice", createInvoice)
+    console.log("tasksFormData", tasksFormData)
 
     useEffect(() => {
         console.log("ue-invoicesArray", invoicesArray)
@@ -275,6 +242,7 @@ export default function App() {
         console.log("handleDownload")
     }
 
+    console.log(tasksFormData)
     return (
         <div className="App">
             {/* if createInvoice is false or falthy render below code */}
@@ -355,6 +323,8 @@ export default function App() {
                             task={tasks}
                             setTask={setTasks}
                             handleAddTask={handleAddTask}
+                            tasks={tasks}
+
                         />
 
                         <InvoiceTasks
@@ -378,16 +348,43 @@ export default function App() {
 
 // Not in use
 
-// <TasksFormData
-// onTaskChange={handleTaskChange}
-// total={total}
-// setTotal={setTotal}
-// tasksFormData={tasksFormData}
-// setTasksFormData={setTasksFormData}
-// tasks={tasks}
-// setTasks={setTasks}
-// handleAddTask={handleAddTask}
-// />
+    // const [total, setTotal] = useState("");
+
+    // const handleAddTask = useCallback(() => {
+    //     // get the setTasksFormData function , // get prevState of Array, // => return a new Array with oldValues + new Element, with nanoId
+    //     setTasksFormData(prevtasksFormData => [...prevtasksFormData, {
+    //         invoiceId: "",
+    //         taskId: "",
+    //         taskDate: "",
+    //         taskName: "",
+    //         taskUnit: "",
+    //         taskQuantity: "",
+    //         taskPrice: "",
+    //         taskTotal: "",
+    //     }
+    //     ])
+    // }, [])
+
+    // const handleTaskChange = useCallback((event) => {
+    //     setTasks(prevFormData => {
+    //         return {
+    //             ...prevFormData,
+    //             [event.target.name]: event.target.value
+    //         }
+    //     })
+
+    // }, [setTasks])
+
+    // <TasksFormData
+    //      onTaskChange={handleTaskChange}
+    //      total={total}
+    //      setTotal={setTotal}
+    //      tasksFormData={tasksFormData}
+    //      setTasksFormData={setTasksFormData}
+    //      tasks={tasks}
+    //      setTasks={setTasks}
+    //      handleAddTask={handleAddTask}
+    // />
 
     // const handleAdd = (e) => {
     //     // e.preventDefault();

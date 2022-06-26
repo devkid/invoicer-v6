@@ -1,9 +1,12 @@
 import React, { useCallback } from "react";
-
+import InvoiceTaskOptions from './InvoiceTaskOptions'
 
 export default function TasksFormData({
     task, setTask,
-    handleAddTask
+    handleAddTask,
+    tasks,
+    handleDeleteTask,
+    handleEdit,
 }) {
     //TODO
     // use useCallback with props onchange and function handlechange 
@@ -14,13 +17,7 @@ export default function TasksFormData({
         handleAddTask(e)
 
     },[handleAddTask])
-
-    
-    // const handleTaskChange = useCallback((e) => {
-    //     setTask(e.target.value)
-    // }, [setTask])
   
-     // TODO fix HandleTaskChange 
      const handleTaskChange = useCallback((event) => {
         setTask(prevFormData => {
             return {
@@ -121,9 +118,14 @@ export default function TasksFormData({
                     onChange={handleTaskChange}
                 />
             </div>
-         
- 
 
+            <InvoiceTaskOptions
+                tasks={tasks} 
+                handleDeleteTask={handleDeleteTask}
+                handleAddTask={handleAddTask}
+                onEdit = {handleEdit}
+            />
+         
             <div className="task-con-total">
                <p>€</p>
             </div>
