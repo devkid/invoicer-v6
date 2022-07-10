@@ -1,7 +1,7 @@
 
 export default function InvoiceDetails({
  //Props
-    invoiceFormData, setInvoiceFormData,
+    invoiceFormData, 
     memoDate
 }){
 

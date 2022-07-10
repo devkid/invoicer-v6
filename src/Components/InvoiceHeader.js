@@ -1,7 +1,7 @@
 
 export default function InvoiceHeader({
 //Props
-    companiesFormData, setCompaniesFormData,
+    companiesFormData,
     clientFormData,
     date,
 }){
