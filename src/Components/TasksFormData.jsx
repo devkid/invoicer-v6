@@ -1,10 +1,11 @@
 import React, { useCallback } from "react";
 import InvoiceTaskOptions from './InvoiceTaskOptions'
+import SingleTask from './SingleTask'
 
 export default function TasksFormData({
     task, setTask,
     handleAddTask,
-    tasks,
+    tasks, setTasks,
     handleDeleteTask,
     handleEdit,
 }) {
@@ -12,6 +13,15 @@ export default function TasksFormData({
     // use useCallback with props onchange and function handlechange 
     //change <hr> tags to css element
     //make task innerText apear in invoice 
+
+    const tasksElements = () => tasks?.map((task, index) => (
+        <SingleTask 
+            index={index}
+            key={task.taskId}
+            tasks={tasks}
+            setTasks={setTasks}
+        />
+    ))
 
     const handleSubmitTask = useCallback((e) =>{
         handleAddTask(e)
@@ -34,17 +44,6 @@ export default function TasksFormData({
             <form 
                 onSubmit={handleSubmitTask}
             >
-            
-            <div className="task-con-inputs">
-                <span id="span-h3-date"><h3>DATE</h3></span>
-                <span id="span-h3-task"><h3>TASK</h3></span>
-                <span id="span-h3-unit"><h3>UNIT</h3></span>
-                <span id="span-h3-quantity"><h3>QUANTITY</h3></span>
-                <span id="span-h3-price"><h3>PRICE</h3></span>
-                <span id="span-h3-total"><h3>TOTAL</h3></span>
-            </div>
-            
-            <hr></hr>
 
             <div className="task-con-inputs">
        
@@ -139,6 +138,9 @@ export default function TasksFormData({
         </button>
 
             </form>
+            <div>
+            {tasksElements}
+            </div>
         </main>
     )
 }
@@ -164,3 +166,4 @@ export default function TasksFormData({
 //             onTaskChange={handleTaskChange}
 //         />
 //     </li>))
+

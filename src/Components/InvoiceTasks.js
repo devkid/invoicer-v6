@@ -1,22 +1,25 @@
 import React from 'react';
 import SingleTask from './SingleTask';
+import AddTask from './AddTask';
 
 export default function InvoiceTasks({
-    tasks, setTasks
+    tasksFormData,
+    tasks, setTasks,
+    onAddTask, onAddTaskFormData
+  
 }) {
 
-    const tasksElements = () => tasks?.map((task, index) => (
-        <SingleTask 
-            index={index}
-            key={task.taskId}
-            tasks={tasks}
-            setTasks={setTasks}
-        />
-    ))
+   
 
     return (
 
         <div className="main">
+
+        <AddTask
+            tasksFormData={tasksFormData}
+            onAddTask={onAddTask}
+            onAddTaskFormData={onAddTaskFormData}
+        />
 
             <div className="task-con-inputs">
                 <span id="span-h3-date"><h3>DATE</h3></span>
@@ -31,7 +34,7 @@ export default function InvoiceTasks({
 
             {/* Unordered List of Tasks to invoice */}
             <div className="div-con-2">
-                    {tasksElements}
+                
             </div>
 
             <hr></hr>

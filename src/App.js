@@ -63,10 +63,18 @@ export default function App() {
         setShowInvoice(!showInvoice)
     }, [setCompaniesFormData, showInvoice])
 
+    const handleCompaniesChange = useCallback((event) => {
+        setCompaniesFormData(prevFormData => {
+            return {
+                ...prevFormData,
+                [event.target.name]: event.target.value
+            }
+        })
+    }, [setCompaniesFormData])
+
     console.log("CL-companiesFD", companiesFormData)
 
-    //Clients
-    //TODO Check if FormData is defined / controlled uncontrolled element 
+    // Clients
     // get data from localStorage State
     const [clientFormData, setClientFormData] = useState(
         () => JSON.parse(localStorage.getItem("clientFormData")) || []
@@ -76,7 +84,8 @@ export default function App() {
     useEffect(() => {
         localStorage.setItem("clientFormData", JSON.stringify(clientFormData))
     }, [clientFormData]);
-    //TODO check usage
+
+    // TODO check usage
     const handleAddClientData = useCallback(() => {
         setClientFormData((clientFormData) => [...clientFormData, {
             clientId: nanoid(),
@@ -95,11 +104,18 @@ export default function App() {
 
     }, [setClientFormData])
 
-   
+    const handleClientChange = useCallback((event) => {
+        setClientFormData(prevFormData => {
+            return {
+                ...prevFormData,
+                [event.target.name]: event.target.value
+            }
+        })
+    }, [setClientFormData])
 
     console.log("CL-clientFormData", clientFormData)
 
-    //InvoiceDetails
+    // InvoiceDetails
     // get data from localStorage State
     const [invoiceFormData, setInvoiceFormData] = useState(
         () => JSON.parse(localStorage.getItem("invoiceFormData")) || []
@@ -110,7 +126,7 @@ export default function App() {
         localStorage.setItem("invoiceFormData", JSON.stringify(invoiceFormData))
     }, [invoiceFormData]);
 
-    //TODO check usage
+    // TODO check usage
     const handleAddInvoiceData = useCallback(() => {
         setInvoiceFormData((invoiceFormData) => [...invoiceFormData, {
             invoiceId: nanoid(),
@@ -128,18 +144,29 @@ export default function App() {
 
     }, [setInvoiceFormData])
 
-    // InvoiceTasks
-    // Task
+    const handleInvoiceChange = useCallback((event) => {
+        setInvoiceFormData(prevFormData => {
+            return {
+                ...prevFormData,
+                [event.target.name]: event.target.value
+            }
+        })
+    }, [setInvoiceFormData])
 
+    // Tasks
     const [task, setTask] = useState('');
+
+    useEffect(() =>{
+        console.log('ue-task', task)
+    },[task])
 
     const [tasks, setTasks] = useState([]);
 
     const handleAddTask = (e) => {
-        e.preventDefault();
+      //  e.preventDefault();
 
-        if(task)
-        setTasks([...tasks, {
+       // if(task)
+        setTasks([...tasks , {
             invoiceId: "",
             taskId: "",
             taskDate: "",
@@ -152,6 +179,7 @@ export default function App() {
         setTask('');
     };
 
+    // InvoiceTasks
     // get data from localStorage State
     const [tasksFormData, setTasksFormData] = useState(
         () => JSON.parse(localStorage.getItem("tasksFormData")) || []
@@ -161,6 +189,12 @@ export default function App() {
     useEffect(() => {
         localStorage.setItem("tasksFormData", JSON.stringify(tasksFormData))
     }, [tasksFormData]);
+
+    const handleAddTaskFormData = useCallback(() => {
+        setTasksFormData(tasks => [...tasks,{
+               tasks
+            }])
+    },[])
 
     useEffect(() => {
         console.log("ue-tasksFormData", tasksFormData)
@@ -172,7 +206,7 @@ export default function App() {
 
     console.log("task", task)
 
-    // InvoicesArray...
+    // InvoicesArray
     // get data from localStorage State
     const [invoicesArray, setInvoicesArray] = useState(
         () => JSON.parse(localStorage.getItem("invoicesArray")) || []
@@ -191,14 +225,14 @@ export default function App() {
             { companiesFormData },
             { clientFormData },
             { invoiceFormData },
-            { tasks }
+            { tasksFormData }
         ]
 
         ])
         setShowInvoice(!showInvoice)
         
     },
-        [clientFormData, companiesFormData, invoiceFormData, showInvoice, tasks])
+        [clientFormData, companiesFormData, invoiceFormData, showInvoice, tasksFormData])
 
     console.log("CL-createInvoice", createInvoice)
     console.log("tasksFormData", tasksFormData)
@@ -206,34 +240,6 @@ export default function App() {
     useEffect(() => {
         console.log("ue-invoicesArray", invoicesArray)
     }, [handleAddInvoice, invoicesArray])
-
-    // handleInputChanges    
-    const handleCompaniesChange = useCallback((event) => {
-        setCompaniesFormData(prevFormData => {
-            return {
-                ...prevFormData,
-                [event.target.name]: event.target.value
-            }
-        })
-    }, [setCompaniesFormData])
-
-    const handleClientChange = useCallback((event) => {
-        setClientFormData(prevFormData => {
-            return {
-                ...prevFormData,
-                [event.target.name]: event.target.value
-            }
-        })
-    }, [setClientFormData])
-
-    const handleInvoiceChange = useCallback((event) => {
-        setInvoiceFormData(prevFormData => {
-            return {
-                ...prevFormData,
-                [event.target.name]: event.target.value
-            }
-        })
-    }, [setInvoiceFormData])
 
     const handlePrint = () => {
         window.print()
@@ -272,6 +278,10 @@ export default function App() {
                     <InvoiceTasks
                         tasks={tasks}
                         setTasks={setTasks}
+                        onAddTaskFormData={handleAddTaskFormData}
+                        onAddTask={handleAddTask}
+                        tasksFormData={tasksFormData}
+                        setTasksFormData={setTasksFormData}
                         id={tasks.taskId}
                         date={tasks.taskDate}
                         task={tasks.taskName}
@@ -330,6 +340,10 @@ export default function App() {
                         <InvoiceTasks
                         tasks={tasks}
                         setTasks={setTasks}
+                        tasksFormData={tasksFormData}
+                        setTasksFormData={setTasksFormData}
+                        onAddTaskFormData={handleAddTaskFormData}
+                        onAddTask={handleAddTask}
                         id={tasks.taskId}
                         date={tasks.taskDate}
                         task={tasks.taskName}

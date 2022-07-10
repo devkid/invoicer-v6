@@ -2,7 +2,7 @@ import React,{ useCallback } from 'react'
 import addTaskBtn from "../images/addCircle.png"
 
 
-export default function AddTask({onAddTask, onDeleteTask,setTasksFormData,tasksFormData}) {
+export default function AddTask({ onAddTask, onDeleteTask,setTasksFormData,tasksFormData }) {
 
   const handleAddTask =useCallback(()=> {
     console.log("handleAddTask got clicked");
