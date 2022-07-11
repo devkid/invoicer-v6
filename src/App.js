@@ -1,5 +1,10 @@
 //Packages
 import React, { useState, useMemo, useEffect, useCallback } from 'react';
+import { Field, reduxForm } from 'redux-form';
+import { useSelector, useDispatch } from 'react-redux';
+import { increment, decrement , incrementByAmount } from './redux/counter';
+import { addString, removeString } from './redux/stringArray';
+
 import { nanoid } from 'nanoid';
 //Components
 import Header from "./Components/Header"
@@ -24,6 +29,11 @@ import TasksFormData from './Components/TasksFormData';
 //make createInvoice independent and create companies profiles and client db 
 
 export default function App() {
+    // STORE
+    const { count } = useSelector((state) => state.counter);
+    const { strings } = useSelector((state)=> state.stringArray);
+    const dispatch = useDispatch();
+
     //var, let, const
     const memoDate = useMemo(() => new Date(), []).toLocaleDateString()
 
@@ -250,7 +260,9 @@ export default function App() {
         console.log("handleDownload")
     }
 
+
     console.log(tasksFormData)
+
     return (
         <div className="App">
             {/* if createInvoice is false or falthy render below code */}
@@ -276,6 +288,26 @@ export default function App() {
                         invoiceFormData={invoiceFormData}
                         memoDate={memoDate}
                     />
+                    <h1>THE COUNT:</h1>
+                    <h2>{count}</h2>
+                    <button onClick={() => dispatch(increment())}>+</button>
+                    <button onClick={() => dispatch(decrement())}>-</button>
+                    <button onClick={() => dispatch(incrementByAmount(10))}>+ 10</button>
+
+                    <h1>THE STRING ARRAY:</h1>
+                    <Field
+                        name='myName'
+                        component='stringArray'
+                    />
+
+
+                    <button
+                        onClick={()=> dispatch(addString())}
+                    >
+                        Add String
+                    </button>
+                    <ul>{strings.map(strings => <li key={strings}>{strings}</li>)}</ul>
+
 
                     <InvoiceTasks
                         tasks={tasks}
