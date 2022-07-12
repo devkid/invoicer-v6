@@ -3,7 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="326f031b-bb0d-4fca-a5d1-bff0e466889c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/CompaniesFormData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/CompaniesFormData.js" afterDir="false" />
+>>>>>>> Stashed changes
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.js" afterDir="false" />
     </list>
@@ -64,7 +71,8 @@
       <workItem from="1652683527498" duration="7861000" />
       <workItem from="1652710961195" duration="23000" />
       <workItem from="1652786723671" duration="3240000" />
-      <workItem from="1657522423782" duration="778000" />
+      <workItem from="1657522423782" duration="5834000" />
+      <workItem from="1657530734232" duration="3150000" />
     </task>
     <servers />
   </component>
