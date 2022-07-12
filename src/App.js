@@ -1,14 +1,9 @@
 //Packages
 import React, { useState, useMemo, useEffect, useCallback } from 'react';
-<<<<<<< Updated upstream
-=======
-<<<<<<< Updated upstream
 import { Field, reduxForm } from 'redux-form';
 import { useSelector, useDispatch } from 'react-redux';
 import { increment, decrement , incrementByAmount } from './redux/counter';
 import { addString, removeString } from './redux/stringArray';
-
->>>>>>> Stashed changes
 import { nanoid } from 'nanoid';
 //Components
 import Header from "./Components/Header"
@@ -22,51 +17,30 @@ import ClientFormData from "./Components/ClientFormData"
 import InvoiceFormData from "./Components/InvoiceFormData"
 import TasksFormData from './Components/TasksFormData';
 
-// THIS IS SOME GITHUB COMMIT AND PULL/MERGE TEST CHANGE 
-=======
-import { useSelector, useDispatch } from 'react-redux';
-import { setCompaniesFormData, removeCompaniesFormData, handleCompaniesFormDataChange } from './redux/Companies';
->>>>>>> Stashed changes
-
-
 //TODO 
 //make usage of css modules 
 //import packages uuid or nanoid
 
-
 export default function App() {
-<<<<<<< Updated upstream
-=======
+
     // STORE
-<<<<<<< Updated upstream
     const { count } = useSelector((state) => state.counter);
     const { strings } = useSelector((state)=> state.stringArray);
-    const dispatch = useDispatch();
 
->>>>>>> Stashed changes
     //var, let, const
-=======
     const { companiesFormData } = useSelector((state) => state.companiesSlice);
 
     const dispatch = useDispatch();
 
-
     // var, let, const
->>>>>>> Stashed changes
     const memoDate = useMemo(() => new Date(), []).toLocaleDateString()
-
 
     //App
     // switch between invoice and invoiceCreator 
     const [showInvoice, setShowInvoice] = useState(true)
 
-
     // invoiceCreator (companiesFormData, clietFormData, invoiceFormData)
     const [createInvoice, setCreateInvoice] = useState(false)
-
-
-
-
 
     useEffect(() => {
         console.log("ue-companiesFormData", companiesFormData)
@@ -79,12 +53,8 @@ export default function App() {
         console.log("handleDownload")
     }
 
-<<<<<<< Updated upstream
-=======
-<<<<<<< Updated upstream
-
->>>>>>> Stashed changes
     console.log(tasksFormData)
+
     return (
         <div className="App">
             {/* if createInvoice is false or falthy render below code */}
@@ -110,6 +80,10 @@ export default function App() {
                         invoiceFormData={invoiceFormData}
                         memoDate={memoDate}
                     />
+
+                    <div className="App">
+                        <button onClick={() => dispatch(setCompaniesFormData())}>Push</button>
+                    </div>
 
                     <InvoiceTasks
                         tasks={tasks}
@@ -191,12 +165,6 @@ export default function App() {
 
 
                     </div>
-                )}
-=======
-    return (
-        <div className="App">
-            <button onClick={() => dispatch(setCompaniesFormData())}>Push</button>
->>>>>>> Stashed changes
-        </div>
-    )
-}
+            )
+                }
+
