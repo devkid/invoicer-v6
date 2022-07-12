@@ -25,7 +25,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setCompaniesFormData, removeCompaniesFormData, handleCompaniesFormDataChange } from './redux/Companies';
 >>>>>>> Stashed changes
 
-
 //TODO 
 //make usage of css modules 
 //import packages uuid or nanoid
