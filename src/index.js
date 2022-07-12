@@ -1,34 +1,19 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
+import { createRoot } from 'react-dom/client';
+import { Provider } from 'react-redux';
+import store from './redux/store';
 import App from './App';
+import './index.css';
 
-<<<<<<< Updated upstream
-=======
 const container = document.getElementById('root');
 
-<<<<<<< Updated upstream
 const root = createRoot(container);
->>>>>>> Stashed changes
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-<<<<<<< Updated upstream
-    <App />
-=======
-    <Provider store ={store}>
-=======
-const root = createRoot(container)
 
 root.render(
-  <React.StrictMode>
-    <Provider store={store}>
->>>>>>> Stashed changes
-        <App />
-    </Provider>
->>>>>>> Stashed changes
-  </React.StrictMode>
+    <React.StrictMode>
+        <Provider store ={store}>
+            <App />
+        </Provider>
+    </React.StrictMode>
 );
-
 
