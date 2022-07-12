@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 
 
 export default function CompaniesFormData({
-    //Props
+
     onCompaniesChange,
     companiesFormData,
 }) {
