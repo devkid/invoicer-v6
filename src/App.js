@@ -62,16 +62,41 @@ export default function App() {
                 <div>
                     {/* Passing down props */}
                     <Header
-
+                        handlePrint={handlePrint}
+                        setShowInvoice={setShowInvoice}
+                        showInvoice={showInvoice}
                     />
 
                     <InvoiceHeader
-
+                        companiesFormData={companiesFormData}
+                        clientFormData={clientFormData}
+                        date={memoDate}
                     />
 
                     <InvoiceDetails
 
                     />
+
+
+                    <h1>THE COUNT:</h1>
+                    <h2>{count}</h2>
+                    <button onClick={() => dispatch(increment())}>+</button>
+                    <button onClick={() => dispatch(decrement())}>-</button>
+                    <button onClick={() => dispatch(incrementByAmount(10))}>+ 10</button>
+
+                    <h1>THE STRING ARRAY:</h1>
+                    <Field
+                        name='myName'
+                        component='stringArray'
+                    />
+
+
+                    <button
+                        onClick={()=> dispatch(addString())}
+                    >
+                        Add String
+                    </button>
+                    <ul>{strings.map(strings => <li key={strings}>{strings}</li>)}</ul>
 
                     <InvoiceTasks
 
@@ -119,23 +144,3 @@ export default function App() {
     )
 }
 
-//
-// <h1>THE COUNT:</h1>
-// <h2>{count}</h2>
-// <button onClick={() => dispatch(increment())}>+</button>
-// <button onClick={() => dispatch(decrement())}>-</button>
-// <button onClick={() => dispatch(incrementByAmount(10))}>+ 10</button>
-//
-// <h1>THE STRING ARRAY:</h1>
-// <Field
-//     name='myName'
-//     component='stringArray'
-// />
-//
-//
-// <button
-//     onClick={()=> dispatch(addString())}
-// >
-//     Add String
-// </button>
-// <ul>{strings.map(strings => <li key={strings}>{strings}</li>)}</ul>
