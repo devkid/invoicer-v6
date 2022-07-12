@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { nanoid } from 'nanoid';
 
 export const companiesSlice = createSlice({
-    name: 'companiesSlice',
+    name: 'companies',
     initialState:{
        companiesFormData: []
     },
@@ -36,4 +36,4 @@ export const companiesSlice = createSlice({
 
 export const { setCompaniesFormData, removeCompaniesFormData, handleCompaniesFormDataChange} = companiesSlice.actions;
 
-export default companiesSlice.reducer;
+export const companiesReducer = companiesSlice.reducer;

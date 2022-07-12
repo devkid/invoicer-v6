@@ -1,12 +1,11 @@
-//Packages
+//Packages, Modules
 import React, { useState, useMemo, useEffect, useCallback } from 'react';
-<<<<<<< Updated upstream
 import { Field, reduxForm } from 'redux-form';
 import { useSelector, useDispatch } from 'react-redux';
 import { increment, decrement , incrementByAmount } from './redux/counter';
 import { addString, removeString } from './redux/stringArray';
-
 import { nanoid } from 'nanoid';
+
 //Components
 import Header from "./Components/Header"
 import InvoiceHeader from "./Components/InvoiceHeader"
@@ -18,12 +17,8 @@ import CompaniesFormData from "./Components/CompaniesFormData"
 import ClientFormData from "./Components/ClientFormData"
 import InvoiceFormData from "./Components/InvoiceFormData"
 import TasksFormData from './Components/TasksFormData';
-
-// THIS IS SOME GITHUB COMMIT AND PULL/MERGE TEST CHANGE 
-=======
-import { useSelector, useDispatch } from 'react-redux';
 import { setCompaniesFormData, removeCompaniesFormData, handleCompaniesFormDataChange } from './redux/Companies';
->>>>>>> Stashed changes
+
 
 //TODO 
 //make usage of css modules 
@@ -32,34 +27,20 @@ import { setCompaniesFormData, removeCompaniesFormData, handleCompaniesFormDataC
 
 export default function App() {
     // STORE
-<<<<<<< Updated upstream
     const { count } = useSelector((state) => state.counter);
     const { strings } = useSelector((state)=> state.stringArray);
+    const { companiesFormData } = useSelector((state) => state.companies);
     const dispatch = useDispatch();
-
-    //var, let, const
-=======
-    const { companiesFormData } = useSelector((state) => state.companiesSlice);
-
-    const dispatch = useDispatch();
-
 
     // var, let, const
->>>>>>> Stashed changes
     const memoDate = useMemo(() => new Date(), []).toLocaleDateString()
-
 
     //App
     // switch between invoice and invoiceCreator 
     const [showInvoice, setShowInvoice] = useState(true)
 
-
     // invoiceCreator (companiesFormData, clietFormData, invoiceFormData)
     const [createInvoice, setCreateInvoice] = useState(false)
-
-
-
-
 
     useEffect(() => {
         console.log("ue-companiesFormData", companiesFormData)
@@ -72,9 +53,6 @@ export default function App() {
         console.log("handleDownload")
     }
 
-<<<<<<< Updated upstream
-
-    console.log(tasksFormData)
 
     return (
         <div className="App">
@@ -84,68 +62,23 @@ export default function App() {
                 <div>
                     {/* Passing down props */}
                     <Header
-                        onPrint={handlePrint}
-                        onAddInvoice={handleAddInvoice}
-                        onDownload={handleDownload}
-                        setShowInvoice={setShowInvoice}
-                        showInvoice={showInvoice}
+
                     />
 
                     <InvoiceHeader
-                        companiesFormData={companiesFormData}
-                        clientFormData={clientFormData}
-                        setClientFormData={setClientFormData}
+
                     />
 
                     <InvoiceDetails
-                        invoiceFormData={invoiceFormData}
-                        memoDate={memoDate}
+
                     />
-                    <h1>THE COUNT:</h1>
-                    <h2>{count}</h2>
-                    <button onClick={() => dispatch(increment())}>+</button>
-                    <button onClick={() => dispatch(decrement())}>-</button>
-                    <button onClick={() => dispatch(incrementByAmount(10))}>+ 10</button>
-
-                    <h1>THE STRING ARRAY:</h1>
-                    <Field
-                        name='myName'
-                        component='stringArray'
-                    />
-
-
-                    <button
-                        onClick={()=> dispatch(addString())}
-                    >
-                        Add String
-                    </button>
-                    <ul>{strings.map(strings => <li key={strings}>{strings}</li>)}</ul>
-
 
                     <InvoiceTasks
-                        tasks={tasks}
-                        setTasks={setTasks}
-                        onAddTaskFormData={handleAddTaskFormData}
-                        onAddTask={handleAddTask}
-                        tasksFormData={tasksFormData}
-                        setTasksFormData={setTasksFormData}
-                        id={tasks.taskId}
-                        date={tasks.taskDate}
-                        task={tasks.taskName}
-                        quantity={tasks.taskQuantity}
-                        unit={tasks.taskUnit}
-                        price={tasks.taskPrice}
-                        total={tasks.taskTotal}
+
                     />
 
                     <InvoiceNotes
-                        invoiceFormData={invoiceFormData}
-                        companiesBankAccount={invoiceFormData.companiesBankAccount}
-                        companiesBankName={invoiceFormData.companiesBankName}
-                        companiesBankIban={invoiceFormData.companiesBankIban}
-                        companiesBankBic={invoiceFormData.companiesBankBic}
-                        companiesTaxId={invoiceFormData.companiesTaxId}
-                        companiesParagraph={invoiceFormData.companiesParagraph}
+
                     />
 
                     <Footer />
@@ -154,60 +87,55 @@ export default function App() {
 
                     <div>
                         <Header
-                            onPrint={handlePrint}
-                            onAddInvoice={handleAddInvoice}
-                            onDownload={handleDownload}
-                            setShowInvoice={setShowInvoice}
-                            showInvoice={showInvoice}
+
                         />
                         <CompaniesFormData
-                            onCompaniesChange={handleCompaniesChange}
-                            companiesFormData={companiesFormData}
+
                         />
 
                         <ClientFormData
-                            onClientChange={handleClientChange}
-                            clientFormData={clientFormData}
+
                         />
 
                         <InvoiceFormData
-                            onInvoiceChange={handleInvoiceChange}
-                            onAddInvoice={handleAddInvoice}
-                            invoiceFormData={invoiceFormData}
+
                         />
 
                         <TasksFormData
-                            task={tasks}
-                            setTask={setTasks}
-                            handleAddTask={handleAddTask}
-                            tasks={tasks}
+
 
                         />
 
                         <InvoiceTasks
-                        tasks={tasks}
-                        setTasks={setTasks}
-                        tasksFormData={tasksFormData}
-                        setTasksFormData={setTasksFormData}
-                        onAddTaskFormData={handleAddTaskFormData}
-                        onAddTask={handleAddTask}
-                        id={tasks.taskId}
-                        date={tasks.taskDate}
-                        task={tasks.taskName}
-                        quantity={tasks.taskQuantity}
-                        unit={tasks.taskUnit}
-                        price={tasks.taskPrice}
-                        total={tasks.taskTotal}
+
                     />
 
 
                     </div>
                 )}
-=======
-    return (
-        <div className="App">
-            <button onClick={() => dispatch(setCompaniesFormData())}>Push</button>
->>>>>>> Stashed changes
         </div>
+
+
     )
 }
+
+//
+// <h1>THE COUNT:</h1>
+// <h2>{count}</h2>
+// <button onClick={() => dispatch(increment())}>+</button>
+// <button onClick={() => dispatch(decrement())}>-</button>
+// <button onClick={() => dispatch(incrementByAmount(10))}>+ 10</button>
+//
+// <h1>THE STRING ARRAY:</h1>
+// <Field
+//     name='myName'
+//     component='stringArray'
+// />
+//
+//
+// <button
+//     onClick={()=> dispatch(addString())}
+// >
+//     Add String
+// </button>
+// <ul>{strings.map(strings => <li key={strings}>{strings}</li>)}</ul>
