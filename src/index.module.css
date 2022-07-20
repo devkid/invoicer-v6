@@ -1,0 +1,45 @@
+/*         General            */
+/*############################*/
+
+body{
+    margin: 0;
+    background-color:#1F2937;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+.App{
+    display: flex;
+    flex-direction: column;
+
+}
+
+hr{
+    color: white;
+    padding: 0;
+    width: 90%;
+}
+
+.ml-20{
+    margin-left: 20px;
+}
+
+mr-20{
+    margin-right: 20px;
+}
+
+.ns{
+    border: none;
+}
+
+.w{
+    color: white;
+}
+
+.mt-20{
+    margin-top: 20px;
+}
+.mb-20{
+margin-bottom: 20px;
+}
+
+

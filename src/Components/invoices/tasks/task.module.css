@@ -1,0 +1,72 @@
+/*          Task              */
+/*############################*/
+
+.task-con-inputs{
+    display: flex;
+    flex-direction: row;
+
+}
+.task-con-inputFlex{
+    display: flex;
+    width: 500px;
+    justify-content: space-between;
+    align-items: center;
+}
+.task-con-inputFlex input{
+    width: 300px;
+}
+
+
+.task-input{
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    text-align: center;
+}
+
+.task-con-date,
+.task-con-task,
+.task-con-unit,
+.task-con-price,
+.task-con-total,
+.task-con-quantity{
+    display: flex;
+    flex-direction: column;
+    margin:10px 10px 0 20px; 
+}
+
+.task-con-date{
+    width: 10%;
+}
+.task-con-task{
+    width: 20%;
+}
+.task-con-unit{
+    width: 5%;
+}
+.task-con-price{
+    width: 10%;
+}
+.task-con-quantity{
+    width: 10%;
+}
+.task-con-total{
+    width: 5%;
+    margin-left:22%;
+}
+#tasks{
+    list-style: none;
+    font-size: 25px;
+    font-weight: bold;
+    padding-left: 20px;
+    text-align: left;
+}
+
+#summary{
+    list-style: none;
+    font-weight: bold;
+    font-size: 25px;
+    padding-right: 20px;
+    text-align: right;
+}

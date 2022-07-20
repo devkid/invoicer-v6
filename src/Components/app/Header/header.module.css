@@ -1,0 +1,90 @@
+/*         Header         */
+/*########################*/
+header{
+    background-color:#3A69D2;
+    color: white;
+    margin-top: 0;
+    height: 250px;
+}
+
+header h1{
+    margin: 0;
+    padding-top: 25px;
+}
+
+/*    Header - MenuButtons    */
+/*############################*/
+
+.menuButtons-con{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px 20px 20px;
+}
+
+.invoiceMenu-btn,
+.addInvoice-btn,
+.editInvoice-btn,
+.previewInvoice-btn,
+.sendInvoice-btn,
+.saveInvoice-btn,
+.printInvoice-btn,
+.downloadInvoice-btn{
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+.addInvoice-btn {
+    background-color: lightgreen;
+    color: black;
+}
+
+.invoiceMenu-btn {
+    background-color: lightblue;
+    color: black;
+}
+
+.editInvoice-btn{
+    background-color: lightcoral;
+}
+
+.saveInvoice-btn{
+    background-color: yellow;
+    color: black;
+}
+
+.printInvoice-btn {
+    background-color: lightblue;
+    color: black;
+}
+
+.downloadInvoice-btn {
+    background-color: lightgreen;
+    color: black;
+}
+
+.previewInvoice-btn{
+    display: flex;
+    align-items:center;
+    background-color: darkseagreen;
+    width: 200px;
+    color: white;
+}
+
+.previewInvoice-btn img{
+margin-right: 15px;
+}
+
+.sendInvoice-btn{
+    display: flex;
+    align-items: center;
+    background-color: #3A69D2;
+    border: 5px solid #1F2937;
+    color: white;
+    width: 200px;
+}
+
+.sendInvoice-btn img{
+    margin-right: 20px;
+}

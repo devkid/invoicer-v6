@@ -1,0 +1,39 @@
+/*              InvoiceNotes               */
+/*          Company Bank Information       */
+/*#########################################*/
+
+.companyBankInformation{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.companyTaxInformation{
+    color: white;
+    margin-top: 10px;
+    padding: 20px;
+}
+
+.additionalPaymentNotes{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: white;
+    margin-top: 25px;
+    padding: 20px;
+}
+
+#show-invoice-mask{
+    width: 400px;
+    margin: auto ;
+    margin-bottom: 10px;
+    height: 40px;
+    text-align: center;
+    background-color: #3A69D2;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+

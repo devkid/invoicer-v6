@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
-import saveBtnIcon from "../images/save_white.png";
-import deleteBtnIcon from "../images/delete.png";
-import addBtnIcon from "../images/add.png";
+import saveBtnIcon from "../../../images/save_white.png";
+import deleteBtnIcon from "../../../images/delete.png";
+import addBtnIcon from "../../../images/add.png";
 
 
 export default function InvoiceTaskOptions({ handleDeleteTask, handleSubmitTask}) {

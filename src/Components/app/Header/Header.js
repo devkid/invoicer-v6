@@ -1,11 +1,11 @@
-import menuBtnIcon from"../images/menu_white.png";
-import addBtnIcon from"../images/add.png";
-import editNoteBtnIcon from"../images/editNote_white.png";
-import saveBtnIcon from"../images/save_white.png";
-import printBtnIcon from"../images/print_white.png";
-import downloadBtnIcon from"../images/download_white.png";
-import previewBtnIcon from"../images/monitor_white.png";
-import sendMailBtnIcon from"../images/sendMail_white.png";
+import menuBtnIcon from"../../../images/menu_white.png";
+import addBtnIcon from"../../../images/add.png";
+import editNoteBtnIcon from"../../../images/editNote_white.png";
+import saveBtnIcon from"../../../images/save_white.png";
+import printBtnIcon from"../../../images/print_white.png";
+import downloadBtnIcon from"../../../images/download_white.png";
+import previewBtnIcon from"../../../images/monitor_white.png";
+import sendMailBtnIcon from"../../../images/sendMail_white.png";
 
 export default function Header({handlePrint , setShowInvoice, showInvoice})  {
    

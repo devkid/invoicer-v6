@@ -1,0 +1,12 @@
+/*          InvoiceDetails               */
+/*#######################################*/
+
+.invoiceDetails{
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    color: white;
+    margin-right: 10px;
+    margin-bottom: 50px;
+    padding: 20px;
+}

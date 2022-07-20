@@ -1,5 +1,5 @@
 import React,{ useCallback } from 'react'
-import addTaskBtn from "../images/addCircle.png"
+import addTaskBtn from "../../../images/addCircle.png"
 
 
 export default function AddTask({ onAddTask, onDeleteTask,setTasksFormData,tasksFormData }) {
