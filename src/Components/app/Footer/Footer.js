@@ -4,7 +4,7 @@ export default function Footer()  {
 
     return (
         <div className={styles.divCon1}>
-            <button id={styles.sendInvoiceBtn}>Send Invoice</button>
+            <button className={styles.sendInvoiceBtn}>Send Invoice</button>
         </div>
     )
 }

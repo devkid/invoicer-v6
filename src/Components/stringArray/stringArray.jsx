@@ -1,10 +1,10 @@
-import { useDisptach, useSelector } from 'react-redux';
-import { selectStringArray } from '../../redux-modules/stringArray/stringArraySelector';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectStrings } from '../../redux-modules/stringArray/stringArraySelector';
 import { addString } from '../../redux-modules/stringArray/stringArraySlice';
 
 export const StringArray = () => {
- const dispatch = useDisptach(); 
- const strings = useSelector(selectStringArray);
+ const dispatch = useDispatch(); 
+ const strings = useSelector(selectStrings);
     
  return (
         <div>

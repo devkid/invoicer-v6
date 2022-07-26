@@ -1,10 +1,10 @@
 import React from 'react';
-import SingleTask from './SingleTask';
 import AddTask from './AddTask';
+import styles from './invoiceTasks.module.css';
+
 
 export default function InvoiceTasks({
     tasksFormData,
-    tasks, setTasks,
     onAddTask, onAddTaskFormData
   
 }) {
@@ -21,31 +21,31 @@ export default function InvoiceTasks({
             onAddTaskFormData={onAddTaskFormData}
         />
 
-            <div className="task-con-inputs">
-                <span id="span-h3-date"><h3>DATE</h3></span>
-                <span id="span-h3-task"><h3>TASK</h3></span>
-                <span id="span-h3-unit"><h3>UNIT</h3></span>
-                <span id="span-h3-quantity"><h3>QUANTITY</h3></span>
-                <span id="span-h3-price"><h3>PRICE</h3></span>
-                <span id="span-h3-total"><h3>TOTAL</h3></span>
+            <div className="taskConInputs">
+                <span id="spanH3Date"><h3>DATE</h3></span>
+                <span id="spanH3Task"><h3>TASK</h3></span>
+                <span id="spanH3Unit"><h3>UNIT</h3></span>
+                <span id="spanH3Quantity"><h3>QUANTITY</h3></span>
+                <span id="spanH3Price"><h3>PRICE</h3></span>
+                <span id="spanH3Total"><h3>TOTAL</h3></span>
             </div>
 
             <hr></hr>
 
             {/* Unordered List of Tasks to invoice */}
-            <div className="div-con-2">
+            <div className="divCon2">
                 
             </div>
 
             <hr></hr>
 
-            <div className="div-con-2">
-                <span className="span-left">Notes</span>
-                <span className="span-right">Total Ammount</span>
+            <div className="divCon2">
+                <span className="spanLeft">Notes</span>
+                <span className="spanRight">Total Ammount</span>
             </div>
 
-            <div className="div-con-1">
-                <span id="total-sum-el">0€</span>
+            <div className="divCon1">
+                <span id="totalSumEl">0€</span>
             </div>
         </div>
     )

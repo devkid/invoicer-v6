@@ -1,44 +1,34 @@
-import React, { useCallback } from 'react';
-import saveBtnIcon from "../../../images/save_white.png";
-import deleteBtnIcon from "../../../images/delete.png";
-import addBtnIcon from "../../../images/add.png";
+import React from 'react';
+import saveBtnIcon from '../../../images/save_white.png';
+import deleteBtnIcon from '../../../images/delete.png';
+import addBtnIcon from '../../../images/add.png';
+import styles from './invoiceTaskOptions.module.css';
+
 
 
 export default function InvoiceTaskOptions({ handleDeleteTask, handleSubmitTask}) {
 
-    // const handleSubmitTask = useCallback(() => {
-    //     console.log("handleSubmitTask got clicked");
-    //     onSubmitTask()
-    // }, [onSubmitTask])
-
-    // const handleDeleteTask = useCallback(() => {
-    //     console.log("handleDelete got clicked");
-    //     onDeleteTask()
-    // }, [onDeleteTask])
 
     return (
-        <div className="div-con-3">
+        <div className="divCon3">
 
             <button
-                className="task-btn"
-                id="save-task-btn"
+                className="taskBtn saveTaskBtn"
             >
                 <img src={saveBtnIcon} alt="saveTaskIcon" />
 
             </button>
 
             <button
-                className="task-btn"
+                className="taskBtn deleteTaskBtn"
                 onClick={handleDeleteTask}
-                id="delete-task-btn"
             >
                 <img src={deleteBtnIcon} alt="deleteTaskIcon" />
 
             </button>
 
             <button
-                className="task-btn"
-                id="add-task-btn"
+                className="taskBtn addTaskBtn"
                 onClick={handleSubmitTask}
             >
                 <img src={addBtnIcon} alt="addTaskIcon" />

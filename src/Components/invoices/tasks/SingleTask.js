@@ -1,5 +1,7 @@
 import React, { useCallback, useState, useEffect } from 'react';
 import InvoiceTaskOptions from './InvoiceTaskOptions';
+import styles from './singleTask.module.css';
+
 
 //TODO
 //<div> elemnets /*<label className="w mr-20" htmlFor={companiesFormData.companiesName}>Companies Name</label>*/
@@ -33,12 +35,12 @@ export default function Task(
              onSubmit={(e) => handleEdit(e, task.taskId)}
         >
         {edit ? (
-        <div className="task-con-inputs">
+        <div className="taskConInputs">
        
-            <div className="task-con-date">
+            <div className="taskConDate">
                 
                 <input
-                    className="task-input"
+                    className="taskInput"
                     type="date"
                     placeholder="Enter Date of Task"
                     name="taskDate"
@@ -50,9 +52,9 @@ export default function Task(
    
             </div>
 
-            <div className="task-con-task">
+            <div className="taskConTask">
                 <input
-                    className="task-input"
+                    className="taskInput"
                     type="text"
                     placeholder="Enter a Task"
                     name="taskName"
@@ -63,9 +65,9 @@ export default function Task(
                 />
             </div>
 
-            <div className="task-con-unit">
+            <div className="taskConUnit">
                 <select
-                    className="task-input"
+                    className="taskInput"
                     type="text"
                     placeholder="Unit"
                     name="taskUnit"
@@ -80,9 +82,9 @@ export default function Task(
                 </select>
             </div>
 
-            <div className="task-con-quantity">
+            <div className="taskConQuantity">
                 <input
-                    className="task-input"
+                    className="taskInput"
                     type="text"
                     placeholder="Enter quantity"
                     name="taskQuantity"
@@ -93,9 +95,9 @@ export default function Task(
                 />
             </div>
 
-            <div className="task-con-price">
+            <div className="taskConPrice">
                 <input
-                    className="task-input"
+                    className="taskInput"
                     type="text"
                     placeholder="Enter a price"
                     name="taskPrice"
@@ -112,7 +114,7 @@ export default function Task(
             onEdit = {handleEdit}
         />
 
-            <div className="task-con-total">
+            <div className="taskConTotal">
                <p>€</p>
             </div>
         </div>

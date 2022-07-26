@@ -1,6 +1,8 @@
-import React, { useCallback } from "react";
+import React, { useCallback } from 'react';
 import InvoiceTaskOptions from './InvoiceTaskOptions'
 import SingleTask from './SingleTask'
+import styles from './tasksFormData.module.css';
+
 
 export default function TasksFormData({
     task, setTask,
@@ -45,12 +47,12 @@ export default function TasksFormData({
                 onSubmit={handleSubmitTask}
             >
 
-            <div className="task-con-inputs">
+            <div className="taskConInputs">
        
-            <div className="task-con-date">
+            <div className="taskConDate">
                 
                 <input
-                    className="task-input"
+                    className="taskInput"
                     type="date"
                     placeholder="Enter Date of Task"
                     name="taskDate"
@@ -62,9 +64,9 @@ export default function TasksFormData({
    
             </div>
 
-            <div className="task-con-task">
+            <div className="taskConTask">
                 <input
-                    className="task-input"
+                    className="taskInput"
                     type="text"
                     placeholder="Enter a Task"
                     name="taskName"
@@ -75,9 +77,9 @@ export default function TasksFormData({
                 />
             </div>
 
-            <div className="task-con-unit">
+            <div className="taskConUnit">
                 <select
-                    className="task-input"
+                    className="taskInput"
                     type="text"
                     placeholder="Unit"
                     name="taskUnit"
@@ -92,9 +94,9 @@ export default function TasksFormData({
                 </select>
             </div>
 
-            <div className="task-con-quantity">
+            <div className="taskConQuantity">
                 <input
-                    className="task-input"
+                    className="taskInput"
                     type="text"
                     placeholder="Enter quantity"
                     name="taskQuantity"
@@ -105,9 +107,9 @@ export default function TasksFormData({
                 />
             </div>
 
-            <div className="task-con-price">
+            <div className="taskConPrice">
                 <input
-                    className="task-input"
+                    className="taskInput"
                     type="text"
                     placeholder="Enter a price"
                     name="taskPrice"
@@ -125,7 +127,7 @@ export default function TasksFormData({
                 onEdit = {handleEdit}
             />
          
-            <div className="task-con-total">
+            <div className="taskConTotal">
                <p>€</p>
             </div>
         </div>
@@ -144,26 +146,3 @@ export default function TasksFormData({
         </main>
     )
 }
-
-
-// Not in use
-// List of Tasks 
-// const tasksElements = tasksFormData.map((taskId, index) => (
-
-//     <li key={index}>
-//         <Task
-//             onAdd = {handleAddTask}
-//             index={index}
-//             key={taskId}
-//             total={total}
-//             setTotal={setTotal}
-//             tasksFormData={tasksFormData}
-//             task={task}
-//             setTask={setTask}
-//             tasks={tasks}
-//             setTasks={setTasks}
-//             setTasksFormData={setTasksFormData}
-//             onTaskChange={handleTaskChange}
-//         />
-//     </li>))
-

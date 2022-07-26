@@ -15,56 +15,56 @@ header h1{
 /*    Header - MenuButtons    */
 /*############################*/
 
-.menuButtons-con{
+.menuButtonsCon{
     display: flex;
     justify-content: space-between;
     padding: 20px 20px 20px 20px;
 }
 
-.invoiceMenu-btn,
-.addInvoice-btn,
-.editInvoice-btn,
-.previewInvoice-btn,
-.sendInvoice-btn,
-.saveInvoice-btn,
-.printInvoice-btn,
-.downloadInvoice-btn{
+.invoiceMenuBtn,
+.addInvoiceBtn,
+.editInvoiceBtn,
+.previewInvoiceBtn,
+.sendInvoiceBtn,
+.saveInvoiceBtn,
+.printInvoiceBtn,
+.downloadInvoiceBtn{
     margin: 10px;
     padding: 5px;
     border-radius: 5px;
     border: none;
 }
 
-.addInvoice-btn {
+.addInvoiceBtn {
     background-color: lightgreen;
     color: black;
 }
 
-.invoiceMenu-btn {
+.invoiceMenuBtn {
     background-color: lightblue;
     color: black;
 }
 
-.editInvoice-btn{
+.editInvoiceBtn{
     background-color: lightcoral;
 }
 
-.saveInvoice-btn{
+.saveInvoiceBtn{
     background-color: yellow;
     color: black;
 }
 
-.printInvoice-btn {
+.printInvoiceBtn {
     background-color: lightblue;
     color: black;
 }
 
-.downloadInvoice-btn {
+.downloadInvoiceBtn {
     background-color: lightgreen;
     color: black;
 }
 
-.previewInvoice-btn{
+.previewInvoiceBtn{
     display: flex;
     align-items:center;
     background-color: darkseagreen;
@@ -72,11 +72,11 @@ header h1{
     color: white;
 }
 
-.previewInvoice-btn img{
+.previewInvoiceBtn img{
 margin-right: 15px;
 }
 
-.sendInvoice-btn{
+.sendInvoiceBtn{
     display: flex;
     align-items: center;
     background-color: #3A69D2;
@@ -85,6 +85,6 @@ margin-right: 15px;
     width: 200px;
 }
 
-.sendInvoice-btn img{
+.sendInvoiceBtn img{
     margin-right: 20px;
 }

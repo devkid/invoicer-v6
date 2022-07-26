@@ -1,3 +1,4 @@
+import styles from './invoiceNotes.module.css';
 
 export default function InvoiceNotes({
     invoiceFormData,

@@ -1,81 +1,80 @@
-import menuBtnIcon from"../../../images/menu_white.png";
-import addBtnIcon from"../../../images/add.png";
-import editNoteBtnIcon from"../../../images/editNote_white.png";
-import saveBtnIcon from"../../../images/save_white.png";
-import printBtnIcon from"../../../images/print_white.png";
-import downloadBtnIcon from"../../../images/download_white.png";
-import previewBtnIcon from"../../../images/monitor_white.png";
-import sendMailBtnIcon from"../../../images/sendMail_white.png";
+import menuBtnIcon from'../../../images/menu_white.png';
+import addBtnIcon from'../../../images/add.png';
+import editNoteBtnIcon from'../../../images/editNote_white.png';
+import saveBtnIcon from'../../../images/save_white.png';
+import printBtnIcon from'../../../images/print_white.png';
+import downloadBtnIcon from'../../../images/download_white.png';
+import previewBtnIcon from'../../../images/monitor_white.png';
+import sendMailBtnIcon from'../../../images/sendMail_white.png';
+import styles from './header.module.css';
 
 export default function Header({handlePrint , setShowInvoice, showInvoice})  {
    
 
     return (
         <header>
-            <div className="menuButtons-con">
-                <div className="invoice-btn-l">
+            <div className={styles.menuButtonsCon}>
+                <div className={styles.invoiceBtnLe}>
                     <button 
-                        className="invoiceMenu-btn"
+                        className={styles.invoiceMenuBtn}
                     >
                         <img src={menuBtnIcon} alt="menuBtnIcon"/>
                     </button>
                     
                     <button 
-                        className="addInvoice-btn"
+                        className={styles.addInvoiceBtn}
                         onClick={() => setShowInvoice(!showInvoice)}
                     >
                         <img src={addBtnIcon} alt="addBtnIcon"/>
                     </button>
                     
                     <button 
-                        className="editInvoice-btn"
-                        //TODO edit Task
-
+                        className={styles.editInvoiceBtn}
                     >
                         <img src={editNoteBtnIcon} alt="editNoteBtnIcon"/>
                     </button>
                 </div>
 
-                <div className="invoice-btn-r">
+                <div className={styles.invoiceBtnR}>
                     <button 
-                        className="saveInvoice-btn"
+                        className={styles.saveInvoiveBtn}
                     >
                         <img src={saveBtnIcon} alt="saveBtnIcon"/>
                     </button>
                     
                     <button 
-                        className="printInvoice-btn"
+                        className={styles.printInvoiceBtn}
                         onClick={handlePrint}
                     >
                         <img src={printBtnIcon} alt="printBtnIcon"/>
                     </button>
                     
                     <button 
-                        className="downloadInvoice-btn"
+                        className={styles.dowloadInvoiceBtn}
                     >
                         <img src={downloadBtnIcon} alt="dowloadBtnIcon"/>
                     </button>
 
                 </div>
             </div>
-            <div className="menuButtons-con">
-                <div className="preview-invoice-btn-l">
+            <div className={styles.menuButtonsCon}>
+                <div className={styles.previewInvoiceBtnLe}>
                     <button 
-                        className="previewInvoice-btn"
+                        className={styles.previewInvoiceBtn}
                         //TODO onClcik showPreviewInvoice
                     >
                         <img src={previewBtnIcon} alt="previewBtnIcon"/>Preview Invoice
                     </button>
                 </div>
                 
-                <div className="margin">
+                <div className={styles.margin}>
                     <h1>Invoice CREATOR</h1>
                     <p>Thanks for choosing GoodCorp, LLC</p>
                 </div>
                 
-                <div className="send-invoice-btn-r">
+                <div className={styles.senInvoiceBtnR}>
                     <button 
-                        className="sendInvoice-btn"
+                        className={styles.sendInvoiceBtn}
                     >
                         <img src={sendMailBtnIcon} alt="sendMailBtnIcon"/>Send Invoice
                     </button>

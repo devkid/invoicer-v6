@@ -1,35 +1,29 @@
 import React,{ useCallback } from 'react'
-import addTaskBtn from "../../../images/addCircle.png"
+import addTaskBtn from '../../../images/addCircle.png';
+import styles from './addTask.module.css';
 
-
-export default function AddTask({ onAddTask, onDeleteTask,setTasksFormData,tasksFormData }) {
+export default function AddTask({ onAddTask, setTasksFormData, tasksFormData }) {
 
   const handleAddTask =useCallback(()=> {
     console.log("handleAddTask got clicked");
     onAddTask()
   },[onAddTask])
 
-  // const handleDeleteTask = useCallback((taskId) => {
-  //   console.log("handleDelete got clicked");
-  //   onDeleteTask(taskId)
-  // },[onDeleteTask])
-
   const handleDeleteTask = (id) => {
     setTasksFormData(tasksFormData.filter((task) => task.taskId !== id))
   };
 
   return (
-    <div className="div-con-2 ml-20">
+    <div className="divCon2 ml20">
         <button 
-            className="addCircle-task-btn"
-            id="add-task-btn" 
+            className="addCircleTaskBtn addTaskBtn"
             onClick={handleAddTask}
             >
             <img src={addTaskBtn} alt="addTaskBtn"/>
             </button>
+
             <button 
-            className="addCircle-task-btn"
-            id="add-task-btn" 
+            className="addCircleTaskBtn addTaskBtn"
             onClick={handleDeleteTask}
             >
             <img src={addTaskBtn} alt="addTaskBtn"/>

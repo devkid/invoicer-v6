@@ -1,3 +1,3 @@
 
 
-export const selectCouter = (state) =>  state.counterSlice.counter;
+export const selectCounter = (state) =>  state.counterSlice.counter;

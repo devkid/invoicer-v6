@@ -1,7 +1,7 @@
 /*            InvoiceHeader              */
 /*          ClientInformation            */
 /*#######################################*/
-.invoiceHeader-con{
+.invoiceHeaderCon{
     display: flex;
     justify-content:space-between ;
     flex-direction: row;

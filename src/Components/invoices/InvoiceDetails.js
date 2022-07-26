@@ -1,3 +1,4 @@
+import styles from './invoiceDetails.module.css';
 
 export default function InvoiceDetails({
  //Props
@@ -6,7 +7,7 @@ export default function InvoiceDetails({
 }){
 
     return (
-        <div className="invoiceDetails">
+        <div className={styles.invoiceDetails}>
             <div><span>Date - </span>{memoDate}</div>
             <div><span>Client Id - </span>{invoiceFormData.clientId}</div>
             <div><span>Invoice Number - </span>{invoiceFormData.invoiceNumber}</div>

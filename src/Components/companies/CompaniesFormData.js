@@ -1,8 +1,10 @@
 import React, { useCallback } from 'react';
+import styles from './companiesFormData.module.css';
+
 
 
 export default function CompaniesFormData({
-    //Props
+
     onCompaniesChange,
     companiesFormData,
 }) {
@@ -15,10 +17,10 @@ export default function CompaniesFormData({
         <div className="addInvoice">
             <h3 className="w">Enter your Companies Data here...</h3>
 
-            <div className="task-con-inputFlex">
-                <label className="w mr-20" htmlFor={companiesFormData.companiesName}>Companies Name</label>
+            <div className="taskConInputFlex">
+                <label className="w mr20" htmlFor={companiesFormData.companiesName}>Companies Name</label>
                 <input
-                    className="task-input"
+                    className="taskInput"
                     type="text"
                     placeholder="Enter companies name"
                     name="companiesName"
@@ -29,10 +31,10 @@ export default function CompaniesFormData({
                 />
             </div>
 
-            <div className="task-con-inputFlex">
-                <label className="w mr-20" htmlFor={companiesFormData.firstName}>First Name</label>
+            <div className="taskConInputFlex">
+                <label className="w mr20" htmlFor={companiesFormData.firstName}>First Name</label>
                 <input
-                    className="task-input"
+                    className="taskInput"
                     type="text"
                     placeholder="Enter your first name"
                     name="firstName"
@@ -43,10 +45,10 @@ export default function CompaniesFormData({
                 />
             </div>
 
-            <div className="task-con-inputFlex">
-                <label className="w mr-20" htmlFor={companiesFormData.lastName}>Last Name</label>
+            <div className="taskConInputFlex">
+                <label className="w mr20" htmlFor={companiesFormData.lastName}>Last Name</label>
                 <input
-                    className="task-input"
+                    className="taskInput"
                     type="text"
                     placeholder="Enter your last name"
                     name="lastName"
@@ -57,10 +59,10 @@ export default function CompaniesFormData({
                 />
             </div>
 
-            <div className="task-con-inputFlex">
-                <label className="w mr-20" htmlFor={companiesFormData.companiesStreet}>Companies Street</label>
+            <div className="taskConInputFlex">
+                <label className="w mr20" htmlFor={companiesFormData.companiesStreet}>Companies Street</label>
                 <input
-                    className="task-input"
+                    className="taskInput"
                     type="text"
                     placeholder="Enter companies street"
                     name="companiesStreet"
@@ -70,10 +72,10 @@ export default function CompaniesFormData({
                     onChange={handleCompaniesChange}
                 />
             </div>
-            <div className="task-con-inputFlex">
-                <label className="w mr-20" htmlFor={companiesFormData.companiesStreetNumber}>Companies Street Number</label>
+            <div className="taskConInputFlex">
+                <label className="w mr20" htmlFor={companiesFormData.companiesStreetNumber}>Companies Street Number</label>
                 <input
-                    className="task-input"
+                    className="taskInput"
                     type="text"
                     placeholder="Enter companies street number"
                     name="companiesStreetNumber"
@@ -84,10 +86,10 @@ export default function CompaniesFormData({
                 />
             </div>
 
-            <div className="task-con-inputFlex">
-                <label className="w mr-20" htmlFor={companiesFormData.companiesZip}>Companies Zip</label>
+            <div className="taskConInputFlex">
+                <label className="w mr20" htmlFor={companiesFormData.companiesZip}>Companies Zip</label>
                 <input
-                    className="task-input"
+                    className="taskInput"
                     type="text"
                     placeholder="Enter companies zip"
                     name="companiesZip"
@@ -98,10 +100,10 @@ export default function CompaniesFormData({
                 />
             </div>
 
-            <div className="task-con-inputFlex">
-                <label className="w mr-20" htmlFor={companiesFormData.companiesCity}>Companies City</label>
+            <div className="taskConInputFlex">
+                <label className="w mr20" htmlFor={companiesFormData.companiesCity}>Companies City</label>
                 <input
-                    className="task-input"
+                    className="taskInput"
                     type="text"
                     placeholder="Enter companies city"
                     name="companiesCity"
@@ -112,10 +114,10 @@ export default function CompaniesFormData({
                 />
             </div>
 
-            <div className="task-con-inputFlex">
-                <label className="w mr-20" htmlFor={companiesFormData.companiesCountry}>Companies Country</label>
+            <div className="taskConInputFlex">
+                <label className="w mr20" htmlFor={companiesFormData.companiesCountry}>Companies Country</label>
                 <input
-                    className="task-input"
+                    className="taskInput"
                     type="text"
                     placeholder="Enter companies country"
                     name="companiesCountry"
@@ -126,10 +128,10 @@ export default function CompaniesFormData({
                 />
             </div>
 
-            <div className="task-con-inputFlex">
-                <label className="w mr-20" htmlFor={companiesFormData.companiesPhone}>Enter Companies Phone</label>
+            <div className="taskConInputFlex">
+                <label className="w mr20" htmlFor={companiesFormData.companiesPhone}>Enter Companies Phone</label>
                 <input
-                    className="task-input"
+                    className="taskInput"
                     type="text"
                     placeholder="Enter companies Phone"
                     name="companiesPhone"
@@ -140,10 +142,10 @@ export default function CompaniesFormData({
                 />
             </div>
 
-            <div className="task-con-inputFlex">
-                <label className="w mr-20" htmlFor={companiesFormData.companiesEmail}>Companies Email</label>
+            <div className="taskConInputFlex">
+                <label className="w mr20" htmlFor={companiesFormData.companiesEmail}>Companies Email</label>
                 <input
-                    className="task-input"
+                    className="taskInput"
                     type="text"
                     placeholder="Enter companies email"
                     name="companiesEmail"
@@ -154,10 +156,10 @@ export default function CompaniesFormData({
                 />
             </div>
 
-            <div className="task-con-inputFlex">
-                <label className="w mr-20" htmlFor={companiesFormData.companiesWebsite}>Companies Website</label>
+            <div className="taskConInputFlex">
+                <label className="w mr20" htmlFor={companiesFormData.companiesWebsite}>Companies Website</label>
                 <input
-                    className="task-input"
+                    className="taskInput"
                     type="text"
                     placeholder="Enter companies website"
                     name="companiesWebsite"

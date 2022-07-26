@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 export const stringArraySlice = createSlice({
     name: 'stringArray',
     initialState: {
-        strings: []
+        strings: ['Test']
     },
     reducers: {
         addString: (state, {payload}) => {
@@ -17,4 +17,4 @@ export const stringArraySlice = createSlice({
 
 export const { addString, removeString } = stringArraySlice.actions;
 
-export const stringArrayReducer = stringArraySlice.reducer;
+export const strings = stringArraySlice.reducer;

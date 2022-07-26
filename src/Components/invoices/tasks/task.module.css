@@ -1,23 +1,23 @@
 /*          Task              */
 /*############################*/
 
-.task-con-inputs{
+.taskConInputs{
     display: flex;
     flex-direction: row;
 
 }
-.task-con-inputFlex{
+.taskConInputFlex{
     display: flex;
     width: 500px;
     justify-content: space-between;
     align-items: center;
 }
-.task-con-inputFlex input{
+.taskConInputFlex input{
     width: 300px;
 }
 
 
-.task-input{
+.taskInput{
     height: 40px;
     border: none;
     border-radius: 5px;
@@ -25,33 +25,33 @@
     text-align: center;
 }
 
-.task-con-date,
-.task-con-task,
-.task-con-unit,
-.task-con-price,
-.task-con-total,
-.task-con-quantity{
+.taskConDate,
+.taskConTask,
+.taskConUnit,
+.taskConPrice,
+.taskConTotal,
+.taskConQuantity{
     display: flex;
     flex-direction: column;
     margin:10px 10px 0 20px; 
 }
 
-.task-con-date{
+.taskConDate{
     width: 10%;
 }
-.task-con-task{
+.taskConTask{
     width: 20%;
 }
-.task-con-unit{
+.taskConUnit{
     width: 5%;
 }
-.task-con-price{
+.taskConPrice{
     width: 10%;
 }
-.task-con-quantity{
+.taskConQuantity{
     width: 10%;
 }
-.task-con-total{
+.taskConTotal{
     width: 5%;
     margin-left:22%;
 }

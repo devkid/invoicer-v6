@@ -1,4 +1,6 @@
 import React, { useCallback } from "react";
+import styles from './invoiceFormData.module.css';
+
 
 export default function InvoiceFormData({
     onInvoiceChange,
@@ -19,10 +21,10 @@ export default function InvoiceFormData({
         <div className="addInvoice">
             <h3 className="w">Enter your Invoice Data here...</h3>
 
-            <div className="task-con-inputFlex">
-                <label className="w mr-20" htmlFor={invoiceFormData.date}>Date</label>
+            <div className="taskConInputFlex">
+                <label className="w mr20" htmlFor={invoiceFormData.date}>Date</label>
                 <input
-                    className="task-input"
+                    className="taskInput"
                     type="date"
                     placeholder="Enter date"
                     name="date"
@@ -34,10 +36,10 @@ export default function InvoiceFormData({
             </div>
 
             {/* TODO Make ClientId appear by Full Name*/}
-            <div className="task-con-inputFlex">
-                <label className="w mr-20" htmlFor={invoiceFormData.clientId}>Client's Id</label>
+            <div className="taskConInputFlex">
+                <label className="w mr20" htmlFor={invoiceFormData.clientId}>Client's Id</label>
                 <input
-                    className="task-input"
+                    className="taskInput"
                     type="text"
                     placeholder="Enter client's Id"
                     name="clientId"
@@ -49,10 +51,10 @@ export default function InvoiceFormData({
             </div>
 
             {/* TODO Make ClientFullName appear as Dropdown by query saerch*/}
-            <div className="task-con-inputFlex">
-                <label className="w mr-20" htmlFor={invoiceFormData.clientLastName}>Client's LastName</label>
+            <div className="taskConInputFlex">
+                <label className="w mr20" htmlFor={invoiceFormData.clientLastName}>Client's LastName</label>
                 <input
-                    className="task-input"
+                    className="taskInput"
                     type="text"
                     placeholder="Enter client's Id"
                     name="clientLastName"
@@ -63,10 +65,10 @@ export default function InvoiceFormData({
                 />
             </div>
 
-            <div className="task-con-inputFlex">
-                <label className="w mr-20" htmlFor={invoiceFormData.invoiceDate}>Invoice Date</label>
+            <div className="taskConInputFlex">
+                <label className="w mr20" htmlFor={invoiceFormData.invoiceDate}>Invoice Date</label>
                 <input
-                    className="task-input"
+                    className="tasIinput"
                     type="date"
                     placeholder="Enter invoice date"
                     name="invoiceDate"
@@ -77,10 +79,10 @@ export default function InvoiceFormData({
                 />
             </div>
 
-            <div className="task-con-inputFlex">
-                <label className="w mr-20" htmlFor={invoiceFormData.invoiceNumber}>Invoice Number</label>
+            <div className="taskConInputFlex">
+                <label className="w mr20" htmlFor={invoiceFormData.invoiceNumber}>Invoice Number</label>
                 <input
-                    className="task-input"
+                    className="taskInput"
                     type="text"
                     placeholder="Enter invoice number"
                     name="invoiceNumber"
@@ -91,10 +93,10 @@ export default function InvoiceFormData({
                 />
             </div>
 
-            <div className="task-con-inputFlex">
-                <label className="w mr-20" htmlFor={invoiceFormData.dueDate}>Due Date </label>
+            <div className="taskConInputFlex">
+                <label className="w mr20" htmlFor={invoiceFormData.dueDate}>Due Date </label>
                 <input
-                    className="task-input"
+                    className="taskInput"
                     type="date"
                     placeholder="Enter due Date"
                     name="dueDate"
@@ -105,10 +107,10 @@ export default function InvoiceFormData({
                 />
             </div>
 
-            <div className="task-con-inputFlex">
-                <label className="w mr-20" htmlFor={invoiceFormData.companiesBankAccount}>Companies Bank Account</label>
+            <div className="taskConInputFlex">
+                <label className="w mr20" htmlFor={invoiceFormData.companiesBankAccount}>Companies Bank Account</label>
                 <input
-                    className="task-input"
+                    className="taskInput"
                     type="text"
                     placeholder="Enter companies Bank Account"
                     name="companiesBankAccount"
@@ -119,10 +121,10 @@ export default function InvoiceFormData({
                 />
             </div>
 
-            <div className="task-con-inputFlex">
-                <label className="w mr-20" htmlFor={invoiceFormData.companiesBankName}>Companies Bank Name</label>
+            <div className="taskConInputFlex">
+                <label className="w mr20" htmlFor={invoiceFormData.companiesBankName}>Companies Bank Name</label>
                 <input
-                    className="task-input"
+                    className="taskInput"
                     type="text"
                     placeholder="Enter companies Bank Name"
                     name="companiesBankName"
@@ -133,10 +135,10 @@ export default function InvoiceFormData({
                 />
             </div>
 
-            <div className="task-con-inputFlex">
-                <label className="w mr-20" htmlFor={invoiceFormData.companiesBankIban}>Companies Bank Iban</label>
+            <div className="taskConInputFlex">
+                <label className="w mr20" htmlFor={invoiceFormData.companiesBankIban}>Companies Bank Iban</label>
                 <input
-                    className="task-input"
+                    className="taskInput"
                     type="text"
                     placeholder="Enter companies Iban"
                     name="companiesBankIban"
@@ -147,10 +149,10 @@ export default function InvoiceFormData({
                 />
             </div>
 
-            <div className="task-con-inputFlex">
-                <label className="w mr-20" htmlFor={invoiceFormData.companiesBankBic}>Companies Bank Bic</label>
+            <div className="taskConInputFlex">
+                <label className="w mr20" htmlFor={invoiceFormData.companiesBankBic}>Companies Bank Bic</label>
                 <input
-                    className="task-input"
+                    className="taskInput"
                     type="text"
                     placeholder="Enter companies Bank Bic"
                     name="companiesBankBic"
@@ -161,10 +163,10 @@ export default function InvoiceFormData({
                 />
             </div>
 
-            <div className="task-con-inputFlex">
-                <label className="w mr-20" htmlFor={invoiceFormData.companiesTaxId}>Companies Tax Id</label>
+            <div className="taskConInputFlex">
+                <label className="w mr20" htmlFor={invoiceFormData.companiesTaxId}>Companies Tax Id</label>
                 <input
-                    className="task-input"
+                    className="taskInput"
                     type="text"
                     placeholder="Enter companies Tax Id"
                     name="companiesTaxId"
@@ -175,10 +177,10 @@ export default function InvoiceFormData({
                 />
             </div>
 
-            <div className="task-con-inputFlex">
-                <label className="w mr-20" htmlFor={invoiceFormData.companiesParagraph}>Companies Paragraph</label>
+            <div className="taskConInputFlex">
+                <label className="w mr20" htmlFor={invoiceFormData.companiesParagraph}>Companies Paragraph</label>
                 <input
-                    className="task-input"
+                    className="taskInput"
                     type="text"
                     placeholder="Enter companies Paragraph"
                     name="companiesParagraph"
@@ -190,9 +192,9 @@ export default function InvoiceFormData({
             </div>
 
             <button
-                className="mt-20"
+                className="showInvoiceMask mt20"
                 onClick={handleAddInvoice}
-                id="show-invoice-mask"
+                id=""
             >
                 Create Invoice
             </button>

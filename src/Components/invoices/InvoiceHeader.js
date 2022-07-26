@@ -1,3 +1,4 @@
+import styles from './invoiceHeader.module.css';
 
 export default function InvoiceHeader({
 //Props
@@ -13,7 +14,7 @@ export default function InvoiceHeader({
 
             <div>
 
-                <div className="invoiceHeader-con">
+                <div className="invoiceHeaderCon">
                     <div className="clientInformation">
                         <div><h2>{clientFormData.clientFirstName} {clientFormData.clientLastName}</h2></div>
                         <div><span>{clientFormData.clientStreet} {clientFormData.clientStreetNumber}</span></div>
