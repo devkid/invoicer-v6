@@ -5,9 +5,11 @@ import styles from './index.module.css';
 
 //Components
 import Header from './Components/app/Header/Header';
+import Footer from './Components/app/Footer/Footer';
 
 
 export default function App() {
+
     // STORE
     const { companiesFormData } = useSelector((state) => state.companiesSlice.companies);
     const dispatch = useDispatch();
@@ -15,9 +17,6 @@ export default function App() {
     // var, let, const
      const memoDate = useMemo(() => new Date(), []).toLocaleDateString()
 
-    useEffect(() => {
-        console.log("ue-companiesFormData", companiesFormData)
-    }, [companiesFormData])
 
     const handlePrint = () => {
         window.print()
@@ -28,14 +27,14 @@ export default function App() {
 
     return (
         <div className={styles.app}>
-
+          
              <Header
                 handlePrint={handlePrint}
                 handleDownload={handleDownload}
              />
-
-            
-
+           
+                <Footer />
+               
         </div>
     )
 }

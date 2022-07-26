@@ -1,3 +1,9 @@
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+//import { selectSwitchMode } from '../../../redux-modules/switchMode/switchModeSelector';
+import { switchMode } from '../../../redux-modules/switchMode/switchModeSlice';
+
+// Images
 import menuBtnIcon from'../../../images/menu_white.png';
 import addBtnIcon from'../../../images/add.png';
 import editNoteBtnIcon from'../../../images/editNote_white.png';
@@ -8,8 +14,9 @@ import previewBtnIcon from'../../../images/monitor_white.png';
 import sendMailBtnIcon from'../../../images/sendMail_white.png';
 import styles from './header.module.css';
 
-export default function Header({handlePrint , setShowInvoice, showInvoice})  {
-   
+
+export default function Header({handlePrint})  {
+    const dispatch = useDispatch(); 
 
     return (
         <header>
@@ -23,7 +30,7 @@ export default function Header({handlePrint , setShowInvoice, showInvoice})  {
                     
                     <button 
                         className={styles.addInvoiceBtn}
-                        onClick={() => setShowInvoice(!showInvoice)}
+                        onClick={() => dispatch(switchMode())}
                     >
                         <img src={addBtnIcon} alt="addBtnIcon"/>
                     </button>

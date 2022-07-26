@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { switchModeSlice } from './app/appSlice';
+import switchModeSlice from './switchMode/switchModeSlice';
 import companiesSlice from './companies/companiesSlice';
 
 export const createStore = () => {

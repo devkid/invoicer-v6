@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 export const switchModeSlice = createSlice({
-    name: 'switchMode',
+    name: 'switchModeSlice',
     initialState: {
         showInvoice: true
     },
@@ -14,4 +14,4 @@ export const switchModeSlice = createSlice({
 
 export const { switchMode } = switchModeSlice.actions;
 
-export const modus = switchModeSlice.reducer;
+export default switchModeSlice.reducer;
