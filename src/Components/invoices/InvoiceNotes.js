@@ -14,18 +14,18 @@ export default function InvoiceNotes({
 
     return (
         <div>
-            <div className="additionalPaymentNotes">
+            <div className={styles.additionalPaymentNotes}>
                 <div><span>Überweisung/ Bar:</span></div>
             </div>
 
-            <div className="companyBankInformation">
+            <div className={styles.companyBankInformation}>
                 <div><span>BankAccount - </span>{companiesBankAccount}</div>
                 <div><span>Bankname - </span>{companiesBankName}</div>
                 <div><span>IBAN - </span>{companiesBankIban}</div>
                 <div><span>Bic - </span>{companiesBankBic}</div>
             </div>
 
-            <div className="companyTaxInformation">
+            <div className={styles.companyTaxInformation}>
                 <div><span>SteuerId - </span>{companiesTaxId}</div>
                 <div><span>UstG - </span>{companiesParagraph}</div>
             </div>

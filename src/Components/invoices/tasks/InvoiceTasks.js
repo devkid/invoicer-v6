@@ -13,7 +13,7 @@ export default function InvoiceTasks({
 
     return (
 
-        <div className="main">
+        <div className={styles.main}>
 
         <AddTask
             tasksFormData={tasksFormData}
@@ -21,7 +21,7 @@ export default function InvoiceTasks({
             onAddTaskFormData={onAddTaskFormData}
         />
 
-            <div className="taskConInputs">
+            <div className={styles.taskConInputs}>
                 <span id="spanH3Date"><h3>DATE</h3></span>
                 <span id="spanH3Task"><h3>TASK</h3></span>
                 <span id="spanH3Unit"><h3>UNIT</h3></span>
@@ -33,18 +33,18 @@ export default function InvoiceTasks({
             <hr></hr>
 
             {/* Unordered List of Tasks to invoice */}
-            <div className="divCon2">
+            <div className={styles.divCon2}>
                 
             </div>
 
             <hr></hr>
 
-            <div className="divCon2">
+            <div className={styles.divCon2}>
                 <span className="spanLeft">Notes</span>
                 <span className="spanRight">Total Ammount</span>
             </div>
 
-            <div className="divCon1">
+            <div className={styles.divCon1}>
                 <span id="totalSumEl">0€</span>
             </div>
         </div>

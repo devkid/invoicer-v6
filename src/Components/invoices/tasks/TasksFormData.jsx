@@ -12,9 +12,7 @@ export default function TasksFormData({
     handleEdit,
 }) {
     //TODO
-    // use useCallback with props onchange and function handlechange 
-    //change <hr> tags to css element
-    //make task innerText apear in invoice 
+    // Write more Comments !!! 
 
     const tasksElements = () => tasks?.map((task, index) => (
         <SingleTask 
@@ -42,17 +40,17 @@ export default function TasksFormData({
 
     return (
 
-        <main className="main">
+        <main className={styles.main}>
             <form 
                 onSubmit={handleSubmitTask}
             >
 
-            <div className="taskConInputs">
+            <div className={styles.taskConInputs}>
        
-            <div className="taskConDate">
+            <div className={styles.taskConDate}>
                 
                 <input
-                    className="taskInput"
+                    className={styles.taskInput}
                     type="date"
                     placeholder="Enter Date of Task"
                     name="taskDate"
@@ -64,9 +62,9 @@ export default function TasksFormData({
    
             </div>
 
-            <div className="taskConTask">
+            <div className={styles.taskConTask}>
                 <input
-                    className="taskInput"
+                    className={styles.taskInput}
                     type="text"
                     placeholder="Enter a Task"
                     name="taskName"
@@ -77,9 +75,9 @@ export default function TasksFormData({
                 />
             </div>
 
-            <div className="taskConUnit">
+            <div className={styles.taskConUnit}>
                 <select
-                    className="taskInput"
+                    className={styles.taskInput}
                     type="text"
                     placeholder="Unit"
                     name="taskUnit"
@@ -94,9 +92,9 @@ export default function TasksFormData({
                 </select>
             </div>
 
-            <div className="taskConQuantity">
+            <div className={styles.taskConQuantity}>
                 <input
-                    className="taskInput"
+                    className={styles.taskInput}
                     type="text"
                     placeholder="Enter quantity"
                     name="taskQuantity"
@@ -107,9 +105,9 @@ export default function TasksFormData({
                 />
             </div>
 
-            <div className="taskConPrice">
+            <div className={styles.taskConPrice}>
                 <input
-                    className="taskInput"
+                    className={styles.taskInput}
                     type="text"
                     placeholder="Enter a price"
                     name="taskPrice"
@@ -127,7 +125,7 @@ export default function TasksFormData({
                 onEdit = {handleEdit}
             />
          
-            <div className="taskConTotal">
+            <div className={styles.taskConTotal}>
                <p>€</p>
             </div>
         </div>

@@ -3,6 +3,8 @@ import saveBtnIcon from '../../../images/save_white.png';
 import deleteBtnIcon from '../../../images/delete.png';
 import addBtnIcon from '../../../images/add.png';
 import styles from './invoiceTaskOptions.module.css';
+import clsx from 'clsx'
+
 
 
 
@@ -10,17 +12,17 @@ export default function InvoiceTaskOptions({ handleDeleteTask, handleSubmitTask}
 
 
     return (
-        <div className="divCon3">
+        <div className={styles.divCon3}>
 
             <button
-                className="taskBtn saveTaskBtn"
+                className={clsx('styles.taskBtn','styles.saveTaskBtn')}
             >
                 <img src={saveBtnIcon} alt="saveTaskIcon" />
 
             </button>
 
             <button
-                className="taskBtn deleteTaskBtn"
+                className={clsx('styles.taskBtn','styles.deleteTaskBtn')}
                 onClick={handleDeleteTask}
             >
                 <img src={deleteBtnIcon} alt="deleteTaskIcon" />
@@ -28,8 +30,7 @@ export default function InvoiceTaskOptions({ handleDeleteTask, handleSubmitTask}
             </button>
 
             <button
-                className="taskBtn addTaskBtn"
-                onClick={handleSubmitTask}
+                className={clsx('styles.taskBtn','styles.addTaskBtn')}
             >
                 <img src={addBtnIcon} alt="addTaskIcon" />
             </button>

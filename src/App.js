@@ -4,10 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 //Components
 import Header from './Components/app/Header/Header';
-import { StringArray } from './Components/stringArray/stringArray';
 
-//TODO 
-//import packages uuid or nanoid
 
 export default function App() {
     // STORE
@@ -15,7 +12,7 @@ export default function App() {
     const dispatch = useDispatch();
 
     // var, let, const
-    // const memoDate = useMemo(() => new Date(), []).toLocaleDateString()
+     const memoDate = useMemo(() => new Date(), []).toLocaleDateString()
 
     useEffect(() => {
         console.log("ue-companiesFormData", companiesFormData)

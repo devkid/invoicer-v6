@@ -1,6 +1,7 @@
 import React,{ useCallback } from 'react'
 import addTaskBtn from '../../../images/addCircle.png';
 import styles from './addTask.module.css';
+import clsx from 'clsx';
 
 export default function AddTask({ onAddTask, setTasksFormData, tasksFormData }) {
 
@@ -14,16 +15,16 @@ export default function AddTask({ onAddTask, setTasksFormData, tasksFormData }) 
   };
 
   return (
-    <div className="divCon2 ml20">
+    <div className={clsx('styles.divCon2','styles.ml20')}>
         <button 
-            className="addCircleTaskBtn addTaskBtn"
+            className={clsx('styles.addCircleTaskBtn','styles.addTaskBtn')}
             onClick={handleAddTask}
             >
             <img src={addTaskBtn} alt="addTaskBtn"/>
             </button>
 
             <button 
-            className="addCircleTaskBtn addTaskBtn"
+            className={clsx('styles.addCircleTaskBtn','styles.addTaskBtn')}
             onClick={handleDeleteTask}
             >
             <img src={addTaskBtn} alt="addTaskBtn"/>

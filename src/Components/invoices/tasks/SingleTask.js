@@ -35,12 +35,12 @@ export default function Task(
              onSubmit={(e) => handleEdit(e, task.taskId)}
         >
         {edit ? (
-        <div className="taskConInputs">
+        <div className={styles.taskConInputs}>
        
-            <div className="taskConDate">
+            <div className={styles.taskConDate}>
                 
                 <input
-                    className="taskInput"
+                    className={styles.taskInput}
                     type="date"
                     placeholder="Enter Date of Task"
                     name="taskDate"
@@ -52,9 +52,9 @@ export default function Task(
    
             </div>
 
-            <div className="taskConTask">
+            <div className={styles.taskConTask}>
                 <input
-                    className="taskInput"
+                    className={styles.taskInput}
                     type="text"
                     placeholder="Enter a Task"
                     name="taskName"
@@ -65,9 +65,9 @@ export default function Task(
                 />
             </div>
 
-            <div className="taskConUnit">
+            <div className={styles.taskConUnit}>
                 <select
-                    className="taskInput"
+                    className={styles.taskInput}
                     type="text"
                     placeholder="Unit"
                     name="taskUnit"
@@ -82,9 +82,9 @@ export default function Task(
                 </select>
             </div>
 
-            <div className="taskConQuantity">
+            <div className={styles.taskConQuantity}>
                 <input
-                    className="taskInput"
+                    className={styles.taskInput}
                     type="text"
                     placeholder="Enter quantity"
                     name="taskQuantity"
@@ -95,9 +95,9 @@ export default function Task(
                 />
             </div>
 
-            <div className="taskConPrice">
+            <div className={styles.taskConPrice}>
                 <input
-                    className="taskInput"
+                    className={styles.taskInput}
                     type="text"
                     placeholder="Enter a price"
                     name="taskPrice"
@@ -114,7 +114,7 @@ export default function Task(
             onEdit = {handleEdit}
         />
 
-            <div className="taskConTotal">
+            <div className={styles.taskConTotal}>
                <p>€</p>
             </div>
         </div>
@@ -133,31 +133,3 @@ export default function Task(
         </form>
     )
 }
-
-//   // add a note to notes
-//   const memoAddNote = useCallback(() => {
-//     setNotes((notes) => [...notes, {
-//       id: notes.length +1,
-//       body: userInput,
-//       isDone: false
-
-//     }])
-//     setUserInput("")
-
-//   },[userInput])
-  
-//   // get userInput
-//   const memoUserInput = useCallback((event) => {
-//     setUserInput(...prevUserInput, [event.target,name]: event.target.value)
-//   },[setUserInput])
-
-//   const memoDeleteNote = (id) => {
-//     const newNotesList = notes.filter((note) => note.id !== id)
-//     setNotes(newNotesList) 
-//   }
-
-//   const memoCheckBox = useCallback((id) =>{
-//     setNotes(prevNotes => prevNotes.map((note) =>{
-//       return note.id === id ? {...note, isDone: !notes.isDone} : note
-//     }))
-//   },[notes.isDone])

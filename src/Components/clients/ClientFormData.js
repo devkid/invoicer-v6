@@ -1,5 +1,6 @@
 import React, { useCallback } from "react";
 import styles from './clientFormData.module.css';
+import clsx from 'clsx';
 
 
 export default function ClientFormData({
@@ -15,13 +16,13 @@ export default function ClientFormData({
 
     return (
 
-        <div className="addInvoice">
-            <h3 className="w">Enter your Clients Data here...</h3>
+        <div className={styles.addInvoice}>
+            <h3 className={styles.w}>Enter your Clients Data here...</h3>
 
-            <div className="task-con-inputFlex">
-                <label className="w mr-20" htmlFor={clientFormData.clientFirstName}>Client's First Name</label>
+            <div className={styles.taskConInputFlex}>
+                <label className={clsx('styles.w','styles.m20')} htmlFor={clientFormData.clientFirstName}>Client's First Name</label>
                 <input
-                    className="task-input"
+                    className={styles.taskInput}
                     type="text"
                     placeholder="Enter client's first name"
                     name="clientFirstName"
@@ -32,10 +33,10 @@ export default function ClientFormData({
                 />
             </div>
 
-            <div className="task-con-inputFlex">
-                <label className="w mr-20" htmlFor={clientFormData.clientLastName}>Client's Last Name</label>
+            <div className={styles.taskConInputFlex}>
+                <label className={clsx('styles.w','styles.m20')} htmlFor={clientFormData.clientLastName}>Client's Last Name</label>
                 <input
-                    className="task-input"
+                    className={styles.taskInput}
                     type="text"
                     placeholder="Enter client's  last name"
                     name="clientLastName"
@@ -46,10 +47,10 @@ export default function ClientFormData({
                 />
             </div>
 
-            <div className="task-con-inputFlex">
-                <label className="w mr-20" htmlFor={clientFormData.clientStreet}>Client's Street</label>
+            <div className={styles.taskConInputFlex}>
+                <label className={clsx('styles.w','styles.m20')} htmlFor={clientFormData.clientStreet}>Client's Street</label>
                 <input
-                    className="task-input"
+                    className={styles.taskInput}
                     type="text"
                     placeholder="Enter client's street"
                     name="clientStreet"
@@ -60,10 +61,10 @@ export default function ClientFormData({
                 />
             </div>
 
-            <div className="task-con-inputFlex">
-                <label className="w mr-20" htmlFor={clientFormData.clientStreetNumber}>Client's Street Number</label>
+            <div className={styles.taskConInputFlex}>
+                <label className={clsx('styles.w','styles.m20')} htmlFor={clientFormData.clientStreetNumber}>Client's Street Number</label>
                 <input
-                    className="task-input"
+                    className={styles.taskInput}
                     type="text"
                     placeholder="Enter client's street´number"
                     name="clientStreetNumber"
@@ -74,10 +75,10 @@ export default function ClientFormData({
                 />
             </div>
 
-            <div className="task-con-inputFlex">
-                <label className="w mr-20" htmlFor={clientFormData.clientZip}>Client's Zip </label>
+            <div className={styles.taskConInputFlex}>
+                <label className={clsx('styles.w','styles.m20')} htmlFor={clientFormData.clientZip}>Client's Zip </label>
                 <input
-                    className="task-input"
+                    className={styles.taskInput}
                     type="text"
                     placeholder="Enter client's zip"
                     name="clientZip"
@@ -88,10 +89,10 @@ export default function ClientFormData({
                 />
             </div>
 
-            <div className="task-con-inputFlex">
-                <label className="w mr-20" htmlFor={clientFormData.clientCity}>Client's City</label>
+            <div className={styles.taskConInputFlex}>
+                <label className={clsx('styles.w','styles.m20')} htmlFor={clientFormData.clientCity}>Client's City</label>
                 <input
-                    className="task-input"
+                    className={styles.taskInput}
                     type="text"
                     placeholder="Enter client's city"
                     name="clientCity"
@@ -103,10 +104,10 @@ export default function ClientFormData({
             </div>
 
 
-            <div className="task-con-inputFlex">
-                <label className="w mr-20" htmlFor={clientFormData.clientCountry}>Client's Country</label>
+            <div className={styles.taskConInputFlex}>
+                <label className={clsx('styles.w','styles.m20')} htmlFor={clientFormData.clientCountry}>Client's Country</label>
                 <input
-                    className="task-input"
+                    className={styles.taskInput}
                     type="text"
                     placeholder="Enter client's country"
                     name="clientCountry"
@@ -117,10 +118,10 @@ export default function ClientFormData({
                 />
             </div>
 
-            <div className="task-con-inputFlex">
-                <label className="w mr-20" htmlFor={clientFormData.clientPhone}>Client's Phone</label>
+            <div className={styles.taskConInputFlex}>
+                <label className={clsx('styles.w','styles.m20')} htmlFor={clientFormData.clientPhone}>Client's Phone</label>
                 <input
-                    className="task-input"
+                    className={styles.taskInput}
                     type="text"
                     placeholder="Enter client's phone"
                     name="clientPhone"
@@ -131,10 +132,10 @@ export default function ClientFormData({
                 />
             </div>
 
-            <div className="task-con-inputFlex">
-                <label className="w mr-20" htmlFor={clientFormData.clientMobile}>Client's Mobile</label>
+            <div className={styles.taskConInputFlex}>
+                <label className={clsx('styles.w','styles.m20')} htmlFor={clientFormData.clientMobile}>Client's Mobile</label>
                 <input
-                    className="task-input"
+                    className={styles.taskInput}
                     type="text"
                     placeholder="Enter client's mobile"
                     name="clientMobile"
@@ -145,10 +146,10 @@ export default function ClientFormData({
                 />
             </div>
 
-            <div className="task-con-inputFlex">
-                <label className="w mr-20" htmlFor={clientFormData.clientEmail}>Client's Email</label>
+            <div className={styles.taskConInputFlex}>
+                <label className={clsx('styles.w','styles.m20')} htmlFor={clientFormData.clientEmail}>Client's Email</label>
                 <input
-                    className="task-input"
+                    className={styles.taskInput}
                     type="text"
                     placeholder="Enter client's email"
                     name="clientEmail"
@@ -160,9 +161,9 @@ export default function ClientFormData({
             </div>
 
             <div className="task-con-inputFlex mb-20">
-                <label className="w mr-20" htmlFor={clientFormData.clientWebsite}>Client's Website</label>
+                <label className={clsx('styles.w','styles.m20')} htmlFor={clientFormData.clientWebsite}>Client's Website</label>
                 <input
-                    className="task-input"
+                    className={styles.taskInput}
                     type="text"
                     placeholder="Enter client's website"
                     name="clientWebsite"

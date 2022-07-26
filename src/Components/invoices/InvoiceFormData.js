@@ -1,5 +1,6 @@
 import React, { useCallback } from "react";
 import styles from './invoiceFormData.module.css';
+import clsx from ' clsx';
 
 
 export default function InvoiceFormData({
@@ -18,13 +19,14 @@ export default function InvoiceFormData({
 
     return (
 
-        <div className="addInvoice">
-            <h3 className="w">Enter your Invoice Data here...</h3>
+        <div className={styles.addInvoice}>
+            <h3 className={styles.w}>Enter your Invoice Data here...</h3>
 
-            <div className="taskConInputFlex">
-                <label className="w mr20" htmlFor={invoiceFormData.date}>Date</label>
+            <div className={styles.taskConInputFlex}>
+        
+        <label className={clsx('styles.w','styles.m20')} htmlFor={invoiceFormData.date}>Date</label>
                 <input
-                    className="taskInput"
+                    className={styles.taskInput}
                     type="date"
                     placeholder="Enter date"
                     name="date"
@@ -36,10 +38,10 @@ export default function InvoiceFormData({
             </div>
 
             {/* TODO Make ClientId appear by Full Name*/}
-            <div className="taskConInputFlex">
-                <label className="w mr20" htmlFor={invoiceFormData.clientId}>Client's Id</label>
+            <div className={styles.taskConInputFlex}>
+                <label className={clsx('styles.w','styles.m20')} htmlFor={invoiceFormData.clientId}>Client's Id</label>
                 <input
-                    className="taskInput"
+                    className={styles.taskInput}
                     type="text"
                     placeholder="Enter client's Id"
                     name="clientId"
@@ -51,10 +53,10 @@ export default function InvoiceFormData({
             </div>
 
             {/* TODO Make ClientFullName appear as Dropdown by query saerch*/}
-            <div className="taskConInputFlex">
-                <label className="w mr20" htmlFor={invoiceFormData.clientLastName}>Client's LastName</label>
+            <div className={styles.taskConInputFlex}>
+                <label className={clsx('styles.w','styles.m20')} htmlFor={invoiceFormData.clientLastName}>Client's LastName</label>
                 <input
-                    className="taskInput"
+                    className={styles.taskInput}
                     type="text"
                     placeholder="Enter client's Id"
                     name="clientLastName"
@@ -65,10 +67,10 @@ export default function InvoiceFormData({
                 />
             </div>
 
-            <div className="taskConInputFlex">
-                <label className="w mr20" htmlFor={invoiceFormData.invoiceDate}>Invoice Date</label>
+            <div className={styles.taskConInputFlex}>
+                <label className={clsx('styles.w','styles.m20')} htmlFor={invoiceFormData.invoiceDate}>Invoice Date</label>
                 <input
-                    className="tasIinput"
+                    className={styles.taskInput}
                     type="date"
                     placeholder="Enter invoice date"
                     name="invoiceDate"
@@ -79,10 +81,10 @@ export default function InvoiceFormData({
                 />
             </div>
 
-            <div className="taskConInputFlex">
-                <label className="w mr20" htmlFor={invoiceFormData.invoiceNumber}>Invoice Number</label>
+            <div className={styles.taskConInputFlex}>
+                <label className={clsx('styles.w','styles.m20')} htmlFor={invoiceFormData.invoiceNumber}>Invoice Number</label>
                 <input
-                    className="taskInput"
+                    className={styles.taskInput}
                     type="text"
                     placeholder="Enter invoice number"
                     name="invoiceNumber"
@@ -93,10 +95,10 @@ export default function InvoiceFormData({
                 />
             </div>
 
-            <div className="taskConInputFlex">
-                <label className="w mr20" htmlFor={invoiceFormData.dueDate}>Due Date </label>
+            <div className={styles.taskConInputFlex}>
+                <label className={clsx('styles.w','styles.m20')} htmlFor={invoiceFormData.dueDate}>Due Date </label>
                 <input
-                    className="taskInput"
+                    className={styles.taskInput}
                     type="date"
                     placeholder="Enter due Date"
                     name="dueDate"
@@ -107,10 +109,10 @@ export default function InvoiceFormData({
                 />
             </div>
 
-            <div className="taskConInputFlex">
-                <label className="w mr20" htmlFor={invoiceFormData.companiesBankAccount}>Companies Bank Account</label>
+            <div className={styles.taskConInputFlex}>
+                <label className={clsx('styles.w','styles.m20')} htmlFor={invoiceFormData.companiesBankAccount}>Companies Bank Account</label>
                 <input
-                    className="taskInput"
+                    className={styles.taskInput}
                     type="text"
                     placeholder="Enter companies Bank Account"
                     name="companiesBankAccount"
@@ -121,10 +123,10 @@ export default function InvoiceFormData({
                 />
             </div>
 
-            <div className="taskConInputFlex">
-                <label className="w mr20" htmlFor={invoiceFormData.companiesBankName}>Companies Bank Name</label>
+            <div className={styles.taskConInputFlex}>
+                <label className={clsx('styles.w','styles.m20')} htmlFor={invoiceFormData.companiesBankName}>Companies Bank Name</label>
                 <input
-                    className="taskInput"
+                    className={styles.taskInput}
                     type="text"
                     placeholder="Enter companies Bank Name"
                     name="companiesBankName"
@@ -135,10 +137,10 @@ export default function InvoiceFormData({
                 />
             </div>
 
-            <div className="taskConInputFlex">
-                <label className="w mr20" htmlFor={invoiceFormData.companiesBankIban}>Companies Bank Iban</label>
+            <div className={styles.taskConInputFlex}>
+                <label className={clsx('styles.w','styles.m20')} htmlFor={invoiceFormData.companiesBankIban}>Companies Bank Iban</label>
                 <input
-                    className="taskInput"
+                    className={styles.taskInput}
                     type="text"
                     placeholder="Enter companies Iban"
                     name="companiesBankIban"
@@ -149,10 +151,10 @@ export default function InvoiceFormData({
                 />
             </div>
 
-            <div className="taskConInputFlex">
-                <label className="w mr20" htmlFor={invoiceFormData.companiesBankBic}>Companies Bank Bic</label>
+            <div className={styles.taskConInputFlex}>
+                <label className={clsx('styles.w','styles.m20')} htmlFor={invoiceFormData.companiesBankBic}>Companies Bank Bic</label>
                 <input
-                    className="taskInput"
+                    className={styles.taskInput}
                     type="text"
                     placeholder="Enter companies Bank Bic"
                     name="companiesBankBic"
@@ -163,10 +165,10 @@ export default function InvoiceFormData({
                 />
             </div>
 
-            <div className="taskConInputFlex">
-                <label className="w mr20" htmlFor={invoiceFormData.companiesTaxId}>Companies Tax Id</label>
+            <div className={styles.taskConInputFlex}>
+                <label className={clsx('styles.w','styles.m20')} htmlFor={invoiceFormData.companiesTaxId}>Companies Tax Id</label>
                 <input
-                    className="taskInput"
+                    className={styles.taskInput}
                     type="text"
                     placeholder="Enter companies Tax Id"
                     name="companiesTaxId"
@@ -177,10 +179,10 @@ export default function InvoiceFormData({
                 />
             </div>
 
-            <div className="taskConInputFlex">
-                <label className="w mr20" htmlFor={invoiceFormData.companiesParagraph}>Companies Paragraph</label>
+            <div className={styles.taskConInputFlex}>
+                <label className={clsx('styles.w','styles.m20')} htmlFor={invoiceFormData.companiesParagraph}>Companies Paragraph</label>
                 <input
-                    className="taskInput"
+                    className={styles.taskInput}
                     type="text"
                     placeholder="Enter companies Paragraph"
                     name="companiesParagraph"
@@ -192,7 +194,7 @@ export default function InvoiceFormData({
             </div>
 
             <button
-                className="showInvoiceMask mt20"
+                className={clsx('styles.showInvoiceMask','styles.mt20')}
                 onClick={handleAddInvoice}
                 id=""
             >
