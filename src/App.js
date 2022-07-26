@@ -1,6 +1,7 @@
 //Packages, Modules
 import React, { useMemo, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import styles from './index.module.css';
 
 //Components
 import Header from './Components/app/Header/Header';
@@ -26,7 +27,7 @@ export default function App() {
     }
 
     return (
-        <div className="App">
+        <div className={styles.app}>
 
              <Header
                 handlePrint={handlePrint}
