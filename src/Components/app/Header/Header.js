@@ -22,6 +22,7 @@ export default function Header({handlePrint})  {
         <header>
             <div className={styles.menuButtonsCon}>
                 <div className={styles.invoiceBtnLe}>
+                
                     <button 
                         className={styles.invoiceMenuBtn}
                     >
