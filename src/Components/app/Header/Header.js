@@ -1,6 +1,5 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-//import { selectSwitchMode } from '../../../redux-modules/switchMode/switchModeSelector';
+import { useDispatch } from 'react-redux';
 import { switchMode } from '../../../redux-modules/switchMode/switchModeSlice';
 
 // Images

@@ -1,0 +1,26 @@
+{
+    "user":[
+        {
+            "id": 1,
+            "name": "Peter",
+            "age": 21
+        },
+        {
+            "id": 2,
+            "name": "Tony",
+            "age": 39
+        }
+    ],
+    "companies":[
+        {
+            "id": 1,
+            "name": "Peter",
+            "owner": 21
+        },
+        {
+            "id": 2,
+            "name": "Tony",
+            "owner": 39
+        }
+    ]
+}

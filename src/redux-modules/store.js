@@ -1,18 +1,26 @@
-import { configureStore } from '@reduxjs/toolkit';
 import switchModeSlice from './switchMode/switchModeSlice';
 import companiesSlice from './companies/companiesSlice';
+import { configureStore, applyMiddleware, StoreEnhancer, ThunkDispatch, AnyAction} from '@reduxjs/toolkit';
+import thunkMiddleware from 'redux-thunk';
+import {setupListeners} from '@reduxjs/toolkit/query';
+import { dbApi } from '../api/db.ts';
 
-export const createStore = () => {
+export const createStore = (applyMiddleware1: StoreEnhancer<{ dispatch: ThunkDispatch<any, undefined, AnyAction> }>) => {
     const reducer = {
+        switchModeSlice,
         companiesSlice,
-        switchModeSlice
+         [dbApi.reducerPath]: dbApi.reducer,
     }
-    return configureStore ({
+    return configureStore({
         reducer,
-        devtoolo:true
-    })
-};
+        // TODO is devtool = reduxDevTool? and how to type it
+        // devtool: true,
+        middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(dbApi.middleware)
+    });
 
-const store = createStore();
+    setupListeners(store.dispatch)
+}
+
+const store = createStore(applyMiddleware(thunkMiddleware));
 
 export default store;
